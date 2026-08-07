@@ -1,0 +1,6 @@
+{
+  "name": "Mom's House Cleaning",
+  "description": "High-Quality Commercial & Residential Maid Services in San Antonio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
