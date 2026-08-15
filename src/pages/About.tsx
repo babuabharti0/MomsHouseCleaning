@@ -1,0 +1,406 @@
+import React from 'react';
+import {
+  ArrowLeft,
+  Radio,
+  Volume2,
+  Sparkles,
+  ShieldCheck,
+  Users,
+} from 'lucide-react';
+import { Button } from '../components/Button';
+import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import { Footer } from '../components/Footer';
+import { CopyrightBar } from '../components/CopyrightBar';
+import { BottomNav } from '../components/BottomNav';
+import img01 from '../images/01.webp';
+
+interface AboutAudioPlayerProps {
+  id: string;
+  station: string;
+  title: string;
+  description: string;
+  audioSrc?: string;
+}
+
+const AboutAudioPlayer: React.FC<AboutAudioPlayerProps> = ({
+  id,
+  station,
+  title,
+  description,
+  audioSrc = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+}) => {
+  return (
+    <div
+      id={id}
+      className="bg-white rounded-2xl p-8 shadow-sm border border-slate-200/70 flex flex-col justify-between transition-all duration-300 hover:shadow-md"
+    >
+      <div>
+        <div className="flex items-center gap-2 mb-3">
+          <span className="inline-flex p-1.5 rounded-full bg-slate-100 text-[#051A24]">
+            <Radio className="w-4 h-4" />
+          </span>
+          <span className="font-mono text-xs uppercase tracking-widest text-[#273C46] font-medium">
+            {station}
+          </span>
+        </div>
+
+        <h4 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight mb-3">
+          {title}
+        </h4>
+
+        <p className="text-sm text-[#273C46] leading-relaxed font-normal mb-4">
+          {description}
+        </p>
+      </div>
+
+      <div className="pt-4 border-t border-slate-100 flex flex-col gap-3">
+        <audio
+          src={audioSrc}
+          controls
+          className="w-full h-10 accent-[#051A24] rounded-lg"
+        />
+
+        <div className="flex items-center justify-between text-xs font-mono text-[#051A24]/70 pt-1">
+          <span className="flex items-center gap-1.5">
+            <Volume2 className="w-3.5 h-3.5 text-[#051A24]" />
+            San Antonio Airwaves
+          </span>
+          <span className="text-[#051A24] font-medium">Broadcast Quality</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+interface AboutPageProps {
+  onNavigateHome: () => void;
+  onNavigateServices: () => void;
+  onNavigateContact: () => void;
+  onOpenEstimate: (serviceTitle?: string) => void;
+  onOpenPhotos?: () => void;
+  onOpenTestimonials?: () => void;
+  onOpenPayment?: () => void;
+}
+
+export const About: React.FC<AboutPageProps> = ({
+  onNavigateHome,
+  onNavigateServices,
+  onNavigateContact,
+  onOpenEstimate,
+  onOpenPhotos = () => {},
+  onOpenTestimonials = () => {},
+  onOpenPayment = () => {},
+}) => {
+  const { ref: heroRef, isInView: heroInView } = useInViewAnimation(0.05);
+  const { ref: narrativeRef, isInView: narrativeInView } = useInViewAnimation(0.1);
+  const { ref: mediaRef, isInView: mediaInView } = useInViewAnimation(0.1);
+  const { ref: philosophyRef, isInView: philosophyInView } = useInViewAnimation(0.1);
+  const { ref: trustCardsRef, isInView: trustCardsInView } = useInViewAnimation(0.1);
+
+  const handleCallOrText = () => {
+    window.open('tel:2103808066', '_self');
+  };
+
+  return (
+    <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
+      {/* Breadcrumb / Back Navigation */}
+      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+        <button
+          id="btn-about-back-home"
+          onClick={onNavigateHome}
+          className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Home / About Us</span>
+        </button>
+
+        <span className="text-xs font-mono text-[#051A24]/60 uppercase tracking-widest hidden sm:inline-block">
+          San Antonio, TX • Since 1999
+        </span>
+      </div>
+
+      {/* TASK 1: HERO SECTION (Minimalist & Centered) */}
+      <section
+        ref={heroRef}
+        id="about-hero-section"
+        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex flex-col items-center text-center"
+      >
+        <p
+          id="about-hero-tagline"
+          style={{ animationDelay: '0.1s' }}
+          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+            heroInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          Family Owned & Operated Since 1999
+        </p>
+
+        <h1
+          id="about-hero-heading"
+          style={{ animationDelay: '0.2s' }}
+          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+            heroInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          The story behind <span className="block sm:inline">Mom's House Cleaning.</span>
+        </h1>
+      </section>
+
+      {/* TASK 2: THE FOUNDERS' NARRATIVE (2-COLUMN EDITORIAL) */}
+      <section
+        ref={narrativeRef}
+        id="about-founders-narrative"
+        className="w-full max-w-[1200px] mx-auto px-6 py-8 md:py-16"
+      >
+        <div
+          style={{ animationDelay: '0.2s' }}
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center will-change-transform ${
+            narrativeInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          {/* LEFT COLUMN (The Text) */}
+          <div
+            id="founders-text-column"
+            className="flex flex-col gap-6 text-[#051A24] text-base md:text-lg leading-relaxed font-normal"
+          >
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#051A24]/70 font-semibold mb-1">
+              <Users className="w-4 h-4 text-[#051A24]" />
+              <span>Meet Glen & Lisa Talley</span>
+            </div>
+
+            <p id="founders-p1" className="text-[#051A24]">
+              Hello, I am Glen Talley. My wife, Lisa, and I are the owners of Mom's House Cleaning. Mom's House Cleaning is a family-owned business which I started in 1999 with my mother who has since retired.
+            </p>
+
+            <p id="founders-p2" className="text-[#273C46]">
+              Now Lisa and I are operating Mom's House Cleaning together. We are active members of our community. We are members of C.O.P. (Cellular on Patrol). Lisa is president, and I am secretary of our neighborhood association.
+            </p>
+
+            <p id="founders-p3" className="text-[#051A24] font-medium border-l-2 border-[#051A24] pl-4 italic">
+              Lisa and I are Christians, and we operate our business with integrity, honesty, and gratefulness.
+            </p>
+
+            <div className="pt-2">
+              <Button
+                id="btn-about-hero-estimate"
+                variant="primary"
+                size="md"
+                onClick={() => onOpenEstimate('Initial Deep Clean')}
+                className="w-full sm:w-auto shadow-md"
+              >
+                Get a Free Estimate
+              </Button>
+            </div>
+          </div>
+
+          {/* RIGHT COLUMN (The Image) */}
+          <div id="founders-image-column" className="flex flex-col items-center">
+            <div className="w-full overflow-hidden rounded-[32px] shadow-lg border border-slate-100 bg-[#F6FCFF]">
+              <img
+                id="founders-image"
+                src={img01}
+                alt="Glen and Lisa Talley, owners of Mom's House Cleaning"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-[360px] sm:h-[440px] object-cover rounded-[32px] hover:scale-105 transition-transform duration-700 will-change-transform"
+              />
+            </div>
+            <p
+              id="founders-image-caption"
+              className="text-sm text-[#273C46] italic text-center mt-4 font-normal"
+            >
+              Glen and Lisa Talley, Owners of Mom's House Cleaning
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* TASK 3: MEDIA & SPONSORSHIPS (AUDIO CARDS) */}
+      <section
+        ref={mediaRef}
+        id="about-community-voices"
+        className="w-full bg-[#F6FCFF] py-20 px-6 border-y border-slate-200/60"
+      >
+        <div
+          style={{ animationDelay: '0.15s' }}
+          className={`max-w-[1000px] mx-auto flex flex-col items-center will-change-transform ${
+            mediaInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          <div className="flex items-center gap-2 mb-2">
+            <Sparkles className="w-4 h-4 text-[#051A24]" />
+            <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/70 font-semibold">
+              Radio & Broadcast Media
+            </span>
+          </div>
+
+          <h2
+            id="heading-community-voices"
+            className="font-mondwest text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight text-center mb-4"
+          >
+            Community Voices
+          </h2>
+
+          <p className="text-sm md:text-base text-[#273C46] text-center max-w-lg mb-12 font-normal">
+            Listen to our official broadcast radio commercials and community anti-drug campaign sponsorships across San Antonio airwaves.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {/* Card 1 */}
+            <AboutAudioPlayer
+              id="audio-commercial-kslr"
+              station="KSLR 630 AM • Christian Radio"
+              title="Official Radio Commercial"
+              description="Here is a Mom's House Cleaning audio commercial that was on KSLR 630 AM Christian Radio:"
+            />
+
+            {/* Card 2 */}
+            <AboutAudioPlayer
+              id="audio-commercial-ktkr"
+              station="KTKR 760 AM • Ticket Sports Radio"
+              title="Anti-Drug Community Campaign"
+              description="Here is a Mom's House Cleaning audio clip – It is an anti-drug campaign commercial that ran on KTKR 760 AM Ticket Sports Radio that Glen and Lisa helped sponsor."
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* TASK 4: THE CLEANING PHILOSOPHY & GUARANTEES */}
+      <section
+        ref={philosophyRef}
+        id="about-cleaning-philosophy"
+        className="w-full max-w-[1000px] mx-auto py-20 px-6 flex flex-col items-center"
+      >
+        <div
+          style={{ animationDelay: '0.2s' }}
+          className={`max-w-2xl mx-auto text-center gap-6 flex flex-col will-change-transform ${
+            philosophyInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/70 font-semibold">
+            Our Cleaning Philosophy
+          </span>
+
+          <h2 className="font-mondwest text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight">
+            Rewarding You With Extra Time for Family
+          </h2>
+
+          <p id="philosophy-p1" className="text-base text-[#273C46] leading-relaxed font-normal">
+            We provide residential and commercial cleaning services in the San Antonio, Texas, area and specialize in weekly, biweekly, or monthly scheduled cleanings. We also specialize in move outs/ clean outs, and make readies, Spring cleaning, and detail cleaning.
+          </p>
+
+          <p id="philosophy-p2" className="text-base text-[#273C46] leading-relaxed font-normal">
+            We can customize a cleaning plan to fit your lifestyle. Mom's House Cleaning provides the experience it takes to keep up a clean home. Our cleaning people provide their own cleaning supplies. No contracts required. We stay until the job is done.
+          </p>
+
+          <p id="philosophy-p3" className="text-base text-[#051A24] font-medium leading-relaxed">
+            Let us help you take care of some of your household chores, and reward yourself with a clean home so you can have extra time to spend with your family or friends.
+          </p>
+        </div>
+
+        {/* TASK 5: TRUST & REASSURANCE CARDS (REUSING PRICING UI) */}
+        <div
+          ref={trustCardsRef}
+          id="about-trust-reassurance-cards"
+          style={{ animationDelay: '0.3s' }}
+          className={`grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-16 will-change-transform ${
+            trustCardsInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          {/* Card 1 (Dark #051A24 bg, Text #F6FCFF) */}
+          <div
+            id="about-card-guarantee-dark"
+            className="bg-[#051A24] text-[#F6FCFF] rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] transition-transform duration-300 hover:-translate-y-1 will-change-transform"
+          >
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-5 h-5 text-[#F6FCFF]" />
+                <h3 className="font-mondwest text-2xl md:text-3xl text-[#F6FCFF] font-semibold tracking-tight">
+                  Our Guarantee
+                </h3>
+              </div>
+
+              <p className="text-sm md:text-base text-[#E0EBF0]/95 leading-relaxed font-normal mb-6">
+                Your satisfaction with the quality of our work is guaranteed. We are not happy unless you are happy! We will fix or redo anything that is missed or needs to be redone within a 24 hour notice, unless the job was checked and approved prior to the cleaning person leaving the job. No cash refunds.
+              </p>
+            </div>
+
+            <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+              <span className="font-mono text-xs text-[#E0EBF0]/70 uppercase tracking-widest">
+                24-Hour Notice Guarantee
+              </span>
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => onOpenEstimate('Guarantee Program')}
+                className="bg-white !text-[#051A24] hover:!bg-[#F6FCFF] shadow-sm"
+              >
+                Get Estimate
+              </Button>
+            </div>
+          </div>
+
+          {/* Card 2 (Light White bg, Text #051A24) */}
+          <div
+            id="about-card-safety-light"
+            className="bg-white text-[#051A24] rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-slate-100 transition-transform duration-300 hover:-translate-y-1 will-change-transform"
+          >
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <ShieldCheck className="w-5 h-5 text-[#051A24]" />
+                <h3 className="font-mondwest text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight">
+                  Safety & Protection
+                </h3>
+              </div>
+
+              <p className="text-sm md:text-base text-[#273C46] leading-relaxed font-normal mb-6">
+                We are bonded and insured for your protection, and we do a background check on everyone who works for us.
+              </p>
+
+              <div className="p-4 bg-[#F6FCFF] rounded-2xl border border-slate-200/60 mb-6">
+                <p className="text-xs font-mono text-[#051A24] uppercase tracking-wider font-semibold mb-1">
+                  Community Discount Program:
+                </p>
+                <p className="text-xs text-[#273C46] leading-relaxed font-normal">
+                  We also offer Special Discounts to active duty Military, Veterans, Senior Citizens, Police, Fire Department, and Paramedics upon request.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+              <span className="font-mono text-xs text-[#051A24]/60 uppercase tracking-widest">
+                Insured & Background Checked
+              </span>
+              <Button
+                variant="tertiary"
+                size="sm"
+                onClick={onNavigateContact}
+              >
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer
+        onOpenEstimate={() => onOpenEstimate('General Inquiries')}
+        onOpenServices={onNavigateServices}
+        onOpenAbout={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onOpenPhotos={onOpenPhotos}
+        onOpenTestimonials={onOpenTestimonials}
+        onOpenPayment={onOpenPayment}
+        onOpenContact={onNavigateContact}
+      />
+
+      {/* Copyright Bar */}
+      <CopyrightBar />
+
+      {/* Fixed Bottom Nav */}
+      <BottomNav onCallOrText={handleCallOrText} />
+    </div>
+  );
+};

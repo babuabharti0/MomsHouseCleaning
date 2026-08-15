@@ -1,0 +1,306 @@
+import React, { useState } from 'react';
+import {
+  ArrowLeft,
+  PhoneCall,
+  CreditCard,
+  Lock,
+  Sparkles,
+  ShieldCheck,
+  Gift,
+  CheckCircle2,
+} from 'lucide-react';
+import { Button } from '../components/Button';
+import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import { Footer } from '../components/Footer';
+import { CopyrightBar } from '../components/CopyrightBar';
+import { BottomNav } from '../components/BottomNav';
+
+interface PaymentOptionsProps {
+  onNavigateHome: () => void;
+  onNavigateServices: () => void;
+  onNavigateContact: () => void;
+  onNavigateAbout: () => void;
+  onNavigateTestimonials: () => void;
+  onOpenEstimate: (serviceTitle?: string) => void;
+  onOpenPhotos?: () => void;
+}
+
+export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
+  onNavigateHome,
+  onNavigateServices,
+  onNavigateContact,
+  onNavigateAbout,
+  onNavigateTestimonials,
+  onOpenEstimate,
+  onOpenPhotos = () => {},
+}) => {
+  const { ref: heroRef, isInView: heroInView } = useInViewAnimation(0.05);
+  const { ref: consoleRef, isInView: consoleInView } = useInViewAnimation(0.1);
+
+  const [amount, setAmount] = useState<string>('');
+  const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
+
+  const handleCallOrText = () => {
+    window.open('tel:2103808066', '_self');
+  };
+
+  const handlePayPalCheckout = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      alert('Please enter a valid payment amount.');
+      return;
+    }
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setPaymentSuccess(true);
+    }, 800);
+  };
+
+  const handleDebitCreditCheckout = () => {
+    if (!amount || parseFloat(amount) <= 0) {
+      alert('Please enter a valid payment amount.');
+      return;
+    }
+    setIsProcessing(true);
+    setTimeout(() => {
+      setIsProcessing(false);
+      setPaymentSuccess(true);
+    }, 800);
+  };
+
+  return (
+    <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
+      {/* Breadcrumb / Back Navigation */}
+      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+        <button
+          id="btn-payment-back-home"
+          onClick={onNavigateHome}
+          className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Home / Make a Payment</span>
+        </button>
+
+        <span className="text-xs font-mono text-[#051A24]/60 uppercase tracking-widest hidden sm:inline-block">
+          256-Bit SSL Encrypted • Direct Portal
+        </span>
+      </div>
+
+      {/* TASK 1: HERO SECTION (Centered & Minimalist) */}
+      <section
+        ref={heroRef}
+        id="payment-hero-section"
+        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-10 md:pt-12 md:pb-12 flex flex-col items-center text-center"
+      >
+        <p
+          id="payment-hero-tagline"
+          style={{ animationDelay: '0.1s' }}
+          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+            heroInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          Simple & Secure
+        </p>
+
+        <h1
+          id="payment-hero-heading"
+          style={{ animationDelay: '0.2s' }}
+          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+            heroInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          Make a <span className="block sm:inline">Payment.</span>
+        </h1>
+      </section>
+
+      {/* TASK 2: THE SECURE CHECKOUT CONSOLE */}
+      <section
+        ref={consoleRef}
+        id="checkout-console-section"
+        className="w-full max-w-[600px] mx-auto px-6 pb-20 flex flex-col gap-8 items-center"
+      >
+        <div
+          style={{ animationDelay: '0.2s' }}
+          className={`w-full bg-white rounded-[40px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-8 md:p-12 border border-gray-100 will-change-transform ${
+            consoleInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          {/* STEP 1: Direct Contact Header */}
+          <div
+            id="checkout-direct-contact-header"
+            className="text-center mb-8 pb-8 border-b border-gray-100 flex flex-col items-center"
+          >
+            <div className="flex items-center justify-center gap-1.5 text-sm text-[#273C46] mb-1.5 font-normal">
+              <PhoneCall className="w-3.5 h-3.5 text-[#051A24]" />
+              <span>Call or Text Us:</span>
+            </div>
+
+            <a
+              href="tel:2103808066"
+              id="payment-phone-link"
+              className="font-mondwest text-3xl sm:text-4xl text-[#051A24] tracking-tight font-semibold hover:opacity-80 transition-opacity"
+            >
+              210.380.8066
+            </a>
+
+            <span className="text-[11px] font-mono uppercase tracking-widest text-[#051A24]/60 mt-1">
+              Questions regarding invoice or amount?
+            </span>
+          </div>
+
+          {/* STEP 2: The Payment Gateway Form */}
+          <div id="checkout-gateway-form" className="w-full">
+            <h2 className="text-xl font-semibold text-[#0D212C] mb-6 text-center tracking-tight">
+              Pay Mom's House Cleaning
+            </h2>
+
+            {paymentSuccess ? (
+              <div
+                id="payment-success-message"
+                className="p-6 bg-[#EBF5FB] border border-[#051A24]/10 rounded-2xl flex flex-col items-center text-center gap-3 animate-fade-in-up"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#051A24] text-white flex items-center justify-center">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+                <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
+                  Payment Processed!
+                </h3>
+                <p className="text-sm text-[#273C46] leading-relaxed">
+                  Thank you for your payment of <strong className="text-[#051A24] font-semibold">${amount || '0.00'} USD</strong>. A receipt has been sent to your email.
+                </p>
+                <button
+                  onClick={() => {
+                    setPaymentSuccess(false);
+                    setAmount('');
+                  }}
+                  className="mt-2 text-xs font-mono uppercase tracking-wider text-[#051A24] underline hover:opacity-75 cursor-pointer"
+                >
+                  Make Another Payment
+                </button>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-6">
+                {/* Price Input Field */}
+                <div className="flex flex-col gap-1.5">
+                  <label
+                    htmlFor="payment-amount-input"
+                    className="text-xs text-gray-500 font-medium"
+                  >
+                    Please write in a price
+                  </label>
+
+                  <div className="flex items-center bg-[#F6FCFF] border-2 border-[#0D212C]/10 rounded-lg p-3 focus-within:border-[#051A24] transition-colors">
+                    <span className="text-[#051A24] font-semibold text-lg mr-2 select-none">
+                      $
+                    </span>
+                    <input
+                      id="payment-amount-input"
+                      type="number"
+                      min="1"
+                      step="any"
+                      value={amount}
+                      onChange={(e) => setAmount(e.target.value)}
+                      placeholder="0.00"
+                      className="bg-transparent w-full text-base font-semibold text-[#051A24] placeholder:text-[#273C46]/30 focus:outline-none"
+                    />
+                    <span className="text-xs font-mono font-medium uppercase tracking-wider text-[#273C46]/60 select-none ml-2">
+                      USD
+                    </span>
+                  </div>
+                </div>
+
+                {/* Checkout Buttons */}
+                <div className="flex flex-col gap-3 mt-2">
+                  {/* Button 1 (PayPal) */}
+                  <button
+                    id="btn-paypal-checkout"
+                    onClick={handlePayPalCheckout}
+                    disabled={isProcessing}
+                    className="bg-[#FFC439] text-black font-semibold rounded-full w-full py-3.5 px-6 shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer text-sm"
+                  >
+                    <span className="font-bold tracking-tight italic font-serif text-base">
+                      PayPal
+                    </span>
+                    <span>{isProcessing ? 'Processing...' : 'Pay with PayPal'}</span>
+                  </button>
+
+                  {/* Button 2 (Debit/Credit) */}
+                  <button
+                    id="btn-debit-credit-checkout"
+                    onClick={handleDebitCreditCheckout}
+                    disabled={isProcessing}
+                    className="bg-[#000000] text-white font-semibold rounded-full w-full py-3.5 px-6 shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2.5 cursor-pointer text-sm"
+                  >
+                    <CreditCard className="w-4 h-4 text-white" />
+                    <span>{isProcessing ? 'Processing...' : 'Debit or Credit Card Checkout'}</span>
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* STEP 3: Alternative Payments & Guarantees */}
+          <div
+            id="checkout-alternative-payments"
+            className="text-sm text-[#273C46] text-center mt-8 space-y-4 pt-6 border-t border-gray-100"
+          >
+            <div className="flex items-center justify-center gap-2 font-medium text-[#051A24]">
+              <Sparkles className="w-4 h-4 text-[#051A24]" />
+              <span>We also accept Zelle, Venmo, and CashApp.</span>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 text-xs text-[#273C46]">
+              <Gift className="w-3.5 h-3.5 text-[#051A24]" />
+              <span>Gift Certificates Available upon Request. (Only valid for one year.)</span>
+            </div>
+
+            <div className="flex items-center justify-center gap-2 text-xs text-[#051A24] font-medium bg-[#F6FCFF] py-2.5 px-4 rounded-xl border border-[#0D212C]/5">
+              <ShieldCheck className="w-4 h-4 text-[#051A24]" />
+              <span>We will beat any insured and bonded competitor's price.</span>
+            </div>
+          </div>
+        </div>
+
+        {/* TASK 4: BOTTOM CTA */}
+        <div
+          style={{ animationDelay: '0.3s' }}
+          className={`flex flex-col items-center gap-2 text-center will-change-transform ${
+            consoleInView ? 'animate-fade-in-up' : 'opacity-0'
+          }`}
+        >
+          <button
+            id="btn-payment-bottom-estimate"
+            onClick={onNavigateContact}
+            className="bg-white text-[#051A24] font-medium px-8 py-3 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-100 hover:shadow-md hover:bg-slate-50 transition-all cursor-pointer text-sm font-sans"
+          >
+            Contact Us for a FREE estimate.
+          </button>
+          <div className="flex items-center gap-1.5 text-xs font-mono text-[#051A24]/60 mt-1">
+            <Lock className="w-3 h-3 text-[#051A24]/70" />
+            <span>Encrypted SSL 256-bit Checkout</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <Footer
+        onOpenEstimate={() => onOpenEstimate('General Inquiries')}
+        onOpenServices={onNavigateServices}
+        onOpenAbout={onNavigateAbout}
+        onOpenPhotos={onOpenPhotos}
+        onOpenTestimonials={onNavigateTestimonials}
+        onOpenPayment={() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onOpenContact={onNavigateContact}
+      />
+
+      {/* Copyright Bar */}
+      <CopyrightBar />
+
+      {/* Fixed Bottom Nav */}
+      <BottomNav onCallOrText={handleCallOrText} />
+    </div>
+  );
+};

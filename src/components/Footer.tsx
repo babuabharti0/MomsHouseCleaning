@@ -1,115 +1,89 @@
-import { FcLike, FcPhone, FcHome, FcMoneyTransfer, FcDonate } from 'react-icons/fc';
-import { CreditCard, DollarSign, Smartphone, Facebook, Instagram } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
+import { Button } from './Button';
 
-export default function Footer() {
+interface FooterProps {
+  onOpenEstimate: () => void;
+  onOpenServices: () => void;
+  onOpenAbout: () => void;
+  onOpenPhotos: () => void;
+  onOpenTestimonials: () => void;
+  onOpenPayment: () => void;
+  onOpenContact: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({
+  onOpenEstimate,
+  onOpenServices,
+  onOpenAbout,
+  onOpenPhotos,
+  onOpenTestimonials,
+  onOpenPayment,
+  onOpenContact,
+}) => {
   return (
-    <footer className="bg-blue-dark text-blue-tint pt-20 pb-24 md:pb-12 border-t-8 border-pink-base relative">
-      
-      {/* Military/Senior Banner overlapping the top edge */}
-      <div className="absolute left-1/2 -translate-x-1/2 -top-6 w-full max-w-4xl px-4">
-        <div className="bg-pink-base text-blue-dark rounded-2xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-          <FcLike className="w-6 h-6 shrink-0 fill-pink-dark text-pink-dark" />
-          <p className="font-bold">Proudly offering 10% discounts for Active Military, Veterans, and Seniors (65+).</p>
-        </div>
-      </div>
-
-      <div className="w-full px-4 sm:px-8 lg:px-12 pt-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <h3 className="text-2xl font-black text-white mb-4">Mom's House Cleaning</h3>
-            <p className="text-sm text-blue-tint/80 mb-6 font-medium">
-              Integrity is the foundation of every spotless home. Serving San Antonio with excellence since 1999.
-            </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-pink-base hover:text-blue-dark transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-pink-base hover:text-blue-dark transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact Us</h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="tel:2103808066" className="flex items-start gap-3 hover:text-pink-base transition-colors">
-                  <FcPhone className="w-5 h-5" />
-                  <span>
-                    <span className="block font-bold text-white">210.380.8066</span>
-                    <span className="text-sm text-blue-tint/80">Call or Text 24/7</span>
-                  </span>
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <FcHome className="w-5 h-5 text-pink-base shrink-0 mt-0.5" />
-                <span>
-                  <span className="block font-bold text-white">San Antonio, TX</span>
-                  <span className="text-sm text-blue-tint/80">Serving the Greater Metro Area</span>
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Guarantees */}
-          <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Our Guarantees</h4>
-            <ul className="space-y-3 font-medium text-sm">
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-pink-base" />
-                100% Satisfaction Guarantee
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-pink-base" />
-                Competitor Price Match
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-pink-base" />
-                W-2 Insured Employees
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-pink-base" />
-                Green Cleaning Certified
-              </li>
-            </ul>
-          </div>
-
-          {/* Payments */}
-          <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Accepted Payments</h4>
-            <div className="flex flex-wrap gap-3">
-              <div className="bg-white/10 p-2 rounded flex items-center justify-center" title="Credit/Debit Cards">
-                <CreditCard className="w-6 h-6 text-white" />
-              </div>
-              <div className="bg-white/10 px-3 py-2 rounded flex items-center justify-center font-bold text-white text-sm" title="Zelle">
-                Zelle
-              </div>
-              <div className="bg-white/10 px-3 py-2 rounded flex items-center justify-center font-bold text-white text-sm" title="Venmo">
-                Venmo
-              </div>
-              <div className="bg-white/10 px-3 py-2 rounded flex items-center justify-center font-bold text-white text-sm gap-1" title="CashApp">
-                <DollarSign className="w-4 h-4 text-pink-base" /> CashApp
-              </div>
-            </div>
-            <p className="text-xs text-blue-tint/70 mt-4 font-medium">
-              Payment is only collected after the job is completed to your satisfaction.
-            </p>
-          </div>
-
+    <footer
+      id="main-footer"
+      className="w-full max-w-[1200px] mx-auto px-6 py-12 border-t border-slate-200/60"
+    >
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+        {/* Left Side: CTA Button */}
+        <div id="footer-cta-col">
+          <Button
+            id="footer-btn-estimate"
+            variant="primary"
+            size="md"
+            onClick={onOpenEstimate}
+          >
+            Get a Free Estimate
+          </Button>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-blue-tint/70 font-medium">
-          <p>&copy; {new Date().getFullYear()} Mom's House Cleaning. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-pink-base transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-pink-base transition-colors">Terms of Service</a>
+        {/* Right Side: Arrow Icon + Two columns of links */}
+        <div id="footer-links-container" className="flex items-start gap-8 sm:gap-14">
+          <div className="pt-1 text-[#051A24] hidden sm:block">
+            <ArrowUpRight className="w-6 h-6 text-[#051A24]" />
+          </div>
+
+          {/* Column 1 */}
+          <div id="footer-col-1" className="flex flex-col gap-3">
+            <button
+              onClick={onOpenServices}
+              className="text-left text-base text-[#051A24] hover:opacity-70 transition-opacity font-normal cursor-pointer"
+            >
+              Our Services
+            </button>
+            <button
+              onClick={onOpenAbout}
+              className="text-left text-base text-[#051A24] hover:opacity-70 transition-opacity font-normal cursor-pointer"
+            >
+              About Us
+            </button>
+            <button
+              onClick={onOpenTestimonials}
+              className="text-left text-base text-[#051A24] hover:opacity-70 transition-opacity font-normal cursor-pointer"
+            >
+              Testimonials
+            </button>
+          </div>
+
+          {/* Column 2 */}
+          <div id="footer-col-2" className="flex flex-col gap-3">
+            <button
+              onClick={onOpenPayment}
+              className="text-left text-base text-[#051A24] hover:opacity-70 transition-opacity font-normal cursor-pointer"
+            >
+              Payment Options
+            </button>
+            <button
+              onClick={onOpenContact}
+              className="text-left text-base text-[#051A24] hover:opacity-70 transition-opacity font-normal cursor-pointer"
+            >
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
     </footer>
   );
-}
+};
