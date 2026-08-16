@@ -1,10 +1,15 @@
 import React from 'react';
-import { Check, ArrowLeft, PhoneCall, Sparkles } from 'lucide-react';
+import {
+  RealisticCheckIcon,
+  RealisticArrowLeftIcon,
+  RealisticSparklesIcon,
+} from '../components/RealisticIcons';
 import { Button } from '../components/Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Footer } from '../components/Footer';
 import { CopyrightBar } from '../components/CopyrightBar';
 import { BottomNav } from '../components/BottomNav';
+import { ServiceSearch } from '../components/ServiceSearch';
 
 export interface ServiceCategory {
   id: string;
@@ -159,7 +164,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ service, index }) => {
         className="w-full md:w-1/3 flex flex-col pt-2"
       >
         <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/60 font-semibold mb-2 flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-[#051A24]" />
+          <RealisticSparklesIcon className="w-4 h-4" />
           Service #{index + 1}
         </span>
         <h2
@@ -179,19 +184,19 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ service, index }) => {
       {/* RIGHT / BOTTOM PORTION: Premium white card (md:w-2/3) wrapping the list */}
       <div
         id={`service-card-${service.id}`}
-        className="w-full md:w-2/3 bg-white rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-8 md:p-12 border border-slate-100/80 transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
+        className="w-full md:w-2/3 bg-white rounded-[20px] sm:rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-4 sm:p-8 md:p-12 border border-slate-100/80 transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 gap-y-2.5 sm:gap-y-4">
           {service.items.map((item, itemIdx) => (
             <div
               key={itemIdx}
               id={`service-item-${service.id}-${itemIdx}`}
-              className="flex items-start gap-3"
+              className="flex items-start gap-2.5 sm:gap-3"
             >
-              <span className="p-0.5 rounded-full bg-slate-100 text-[#051A24] flex-shrink-0 mt-0.5">
-                <Check className="w-4 h-4 text-[#051A24]" />
+              <span className="p-0.5 rounded-full bg-slate-100 flex-shrink-0 mt-0.5">
+                <RealisticCheckIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </span>
-              <p className="text-sm text-[#0D212C] leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-[#0D212C] leading-relaxed font-normal">
                 {item}
               </p>
             </div>
@@ -230,13 +235,13 @@ export const Services: React.FC<ServicesPageProps> = ({
   return (
     <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation Bar */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
           id="btn-services-back-home"
           onClick={onNavigateHome}
           className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <RealisticArrowLeftIcon className="w-4 h-4" />
           <span>Home / Comprehensive Services</span>
         </button>
 
@@ -249,7 +254,7 @@ export const Services: React.FC<ServicesPageProps> = ({
       <section
         ref={heroRef}
         id="services-hero-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-16 md:pt-12 md:pb-24 flex flex-col items-center text-center"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col items-center text-center"
       >
         {/* Tagline */}
         <p
@@ -266,7 +271,7 @@ export const Services: React.FC<ServicesPageProps> = ({
         <h1
           id="services-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
+          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -293,10 +298,13 @@ export const Services: React.FC<ServicesPageProps> = ({
         </div>
       </section>
 
+      {/* Interactive Hybrid Service Search & Filtering Engine */}
+      <ServiceSearch onOpenEstimate={onOpenEstimate} />
+
       {/* Services List Section (2-Column Grid inside Premium Cards) */}
       <section
         id="services-list-container"
-        className="w-full max-w-[1200px] mx-auto px-6 pb-24 md:pb-32 flex flex-col gap-16 md:gap-24"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col gap-8 md:gap-24"
       >
         {servicesData.map((service, index) => (
           <ServiceBlock key={service.id} service={service} index={index} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { RealisticArrowUpRightIcon } from './RealisticIcons';
 import { Button } from './Button';
 
 interface FooterProps {
@@ -24,7 +24,7 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer
       id="main-footer"
-      className="w-full max-w-[1200px] mx-auto px-6 py-12 border-t border-slate-200/60"
+      className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto py-12 border-t border-slate-200/60"
     >
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         {/* Left Side: CTA Button */}
@@ -41,8 +41,8 @@ export const Footer: React.FC<FooterProps> = ({
 
         {/* Right Side: Arrow Icon + Two columns of links */}
         <div id="footer-links-container" className="flex items-start gap-8 sm:gap-14">
-          <div className="pt-1 text-[#051A24] hidden sm:block">
-            <ArrowUpRight className="w-6 h-6 text-[#051A24]" />
+          <div className="pt-1 hidden sm:block">
+            <RealisticArrowUpRightIcon className="w-6 h-6" />
           </div>
 
           {/* Column 1 */}

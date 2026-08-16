@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import {
-  ArrowLeft,
-  PhoneCall,
-  CreditCard,
-  Lock,
-  Sparkles,
-  ShieldCheck,
-  Gift,
-  CheckCircle2,
-} from 'lucide-react';
+  RealisticArrowLeftIcon,
+  RealisticPhoneCallIcon,
+  RealisticCreditCardIcon,
+  RealisticLockIcon,
+  RealisticSparklesIcon,
+  RealisticShieldCheckIcon,
+  RealisticGiftIcon,
+  RealisticCheckCircle2Icon,
+} from '../components/RealisticIcons';
 import { Button } from '../components/Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Footer } from '../components/Footer';
@@ -72,13 +72,13 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
   return (
     <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
           id="btn-payment-back-home"
           onClick={onNavigateHome}
           className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <RealisticArrowLeftIcon className="w-4 h-4" />
           <span>Home / Make a Payment</span>
         </button>
 
@@ -91,12 +91,12 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
       <section
         ref={heroRef}
         id="payment-hero-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-10 md:pt-12 md:pb-12 flex flex-col items-center text-center"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col items-center text-center"
       >
         <p
           id="payment-hero-tagline"
           style={{ animationDelay: '0.1s' }}
-          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+          className={`font-mono text-xs md:text-sm text-[#051A24] uppercase tracking-widest font-medium mb-2 md:mb-3 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -106,7 +106,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
         <h1
           id="payment-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -118,11 +118,11 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
       <section
         ref={consoleRef}
         id="checkout-console-section"
-        className="w-full max-w-[600px] mx-auto px-6 pb-20 flex flex-col gap-8 items-center"
+        className="w-full max-w-[600px] mx-auto py-8 px-4 md:py-24 md:px-12 flex flex-col gap-6 md:gap-8 items-center"
       >
         <div
           style={{ animationDelay: '0.2s' }}
-          className={`w-full bg-white rounded-[40px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-8 md:p-12 border border-gray-100 will-change-transform ${
+          className={`w-full bg-white rounded-[24px] sm:rounded-[40px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-5 sm:p-8 md:p-12 border border-gray-100 will-change-transform ${
             consoleInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -132,7 +132,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             className="text-center mb-8 pb-8 border-b border-gray-100 flex flex-col items-center"
           >
             <div className="flex items-center justify-center gap-1.5 text-sm text-[#273C46] mb-1.5 font-normal">
-              <PhoneCall className="w-3.5 h-3.5 text-[#051A24]" />
+              <RealisticPhoneCallIcon className="w-4 h-4" />
               <span>Call or Text Us:</span>
             </div>
 
@@ -161,7 +161,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                 className="p-6 bg-[#EBF5FB] border border-[#051A24]/10 rounded-2xl flex flex-col items-center text-center gap-3 animate-fade-in-up"
               >
                 <div className="w-12 h-12 rounded-full bg-[#051A24] text-white flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6" />
+                  <RealisticCheckCircle2Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
                   Payment Processed!
@@ -232,7 +232,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                     disabled={isProcessing}
                     className="bg-[#000000] text-white font-semibold rounded-full w-full py-3.5 px-6 shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2.5 cursor-pointer text-sm"
                   >
-                    <CreditCard className="w-4 h-4 text-white" />
+                    <RealisticCreditCardIcon className="w-5 h-5" />
                     <span>{isProcessing ? 'Processing...' : 'Debit or Credit Card Checkout'}</span>
                   </button>
                 </div>
@@ -246,17 +246,17 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             className="text-sm text-[#273C46] text-center mt-8 space-y-4 pt-6 border-t border-gray-100"
           >
             <div className="flex items-center justify-center gap-2 font-medium text-[#051A24]">
-              <Sparkles className="w-4 h-4 text-[#051A24]" />
+              <RealisticSparklesIcon className="w-4 h-4" />
               <span>We also accept Zelle, Venmo, and CashApp.</span>
             </div>
 
             <div className="flex items-center justify-center gap-2 text-xs text-[#273C46]">
-              <Gift className="w-3.5 h-3.5 text-[#051A24]" />
+              <RealisticGiftIcon className="w-4 h-4" />
               <span>Gift Certificates Available upon Request. (Only valid for one year.)</span>
             </div>
 
             <div className="flex items-center justify-center gap-2 text-xs text-[#051A24] font-medium bg-[#F6FCFF] py-2.5 px-4 rounded-xl border border-[#0D212C]/5">
-              <ShieldCheck className="w-4 h-4 text-[#051A24]" />
+              <RealisticShieldCheckIcon className="w-4 h-4" />
               <span>We will beat any insured and bonded competitor's price.</span>
             </div>
           </div>
@@ -277,7 +277,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             Contact Us for a FREE estimate.
           </button>
           <div className="flex items-center gap-1.5 text-xs font-mono text-[#051A24]/60 mt-1">
-            <Lock className="w-3 h-3 text-[#051A24]/70" />
+            <RealisticLockIcon className="w-3.5 h-3.5" />
             <span>Encrypted SSL 256-bit Checkout</span>
           </div>
         </div>

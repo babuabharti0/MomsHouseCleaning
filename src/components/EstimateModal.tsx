@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Calculator, Sparkles, Phone, Mail, MapPin } from 'lucide-react';
+import {
+  RealisticXIcon,
+  RealisticCheckCircle2Icon,
+  RealisticCalculatorIcon,
+  RealisticSparklesIcon,
+} from './RealisticIcons';
 import { Button } from './Button';
 
 interface EstimateModalProps {
@@ -70,13 +75,13 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
           className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-1.5 rounded-full hover:bg-slate-100 text-slate-500 hover:text-[#051A24] transition-colors cursor-pointer z-10"
           aria-label="Close estimate dialog"
         >
-          <X className="w-4 h-4" />
+          <RealisticXIcon className="w-4 h-4" />
         </button>
 
         {isSubmitted ? (
           <div className="py-5 text-center flex flex-col items-center">
-            <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mb-3 text-emerald-600">
-              <CheckCircle2 className="w-8 h-8" />
+            <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mb-3">
+              <RealisticCheckCircle2Icon className="w-8 h-8" />
             </div>
             <h3 className="font-mondwest text-2xl font-semibold text-[#051A24] mb-1.5">
               Estimate Request Received!
@@ -98,7 +103,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
           <div>
             <div className="mb-3.5">
               <div className="flex items-center gap-1.5 mb-0.5 text-[11px] uppercase font-mono tracking-widest text-[#051A24]/60 font-semibold">
-                <Calculator className="w-3 h-3" />
+                <RealisticCalculatorIcon className="w-3.5 h-3.5" />
                 <span>San Antonio Custom Quote</span>
               </div>
               <h2 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
@@ -198,7 +203,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
                 </div>
                 <div className="text-right">
                   <span className="inline-flex items-center gap-1 text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-mono">
-                    <Sparkles className="w-2.5 h-2.5" /> Family Owned
+                    <RealisticSparklesIcon className="w-3 h-3" /> Family Owned
                   </span>
                 </div>
               </div>

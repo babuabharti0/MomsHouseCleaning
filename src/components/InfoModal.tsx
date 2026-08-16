@@ -1,5 +1,13 @@
 import React from 'react';
-import { X, Phone, Mail, MapPin, Clock, CreditCard, ShieldCheck, Heart } from 'lucide-react';
+import {
+  RealisticXIcon,
+  RealisticPhoneCallIcon,
+  RealisticClockIcon,
+  RealisticCreditCardIcon,
+  RealisticShieldCheckIcon,
+  RealisticHeartIcon,
+  RealisticMapPinIcon,
+} from './RealisticIcons';
 import { Button } from './Button';
 
 interface InfoModalProps {
@@ -36,13 +44,13 @@ export const InfoModal: React.FC<InfoModalProps> = ({
           className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-1.5 rounded-full hover:bg-slate-100 text-slate-500 hover:text-[#051A24] transition-colors cursor-pointer z-10"
           aria-label="Close dialog"
         >
-          <X className="w-4 h-4" />
+          <RealisticXIcon className="w-4 h-4" />
         </button>
 
         {type === 'about' && (
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs uppercase font-mono tracking-widest text-[#051A24]/60">
-              <Heart className="w-3.5 h-3.5 text-rose-500" />
+              <RealisticHeartIcon className="w-4 h-4" />
               <span>Family Owned Since 1999</span>
             </div>
             <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
@@ -71,7 +79,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
         {type === 'payment' && (
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs uppercase font-mono tracking-widest text-[#051A24]/60">
-              <CreditCard className="w-3.5 h-3.5" />
+              <RealisticCreditCardIcon className="w-4 h-4" />
               <span>Transparent & Convenient</span>
             </div>
             <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
@@ -147,7 +155,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
         {type === 'contact' && (
           <div>
             <div className="flex items-center gap-2 mb-2 text-xs uppercase font-mono tracking-widest text-[#051A24]/60">
-              <MapPin className="w-3.5 h-3.5" />
+              <RealisticMapPinIcon className="w-4 h-4" />
               <span>San Antonio, Texas</span>
             </div>
             <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
@@ -159,7 +167,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
                 className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-200/70 text-[#051A24]"
               >
                 <div className="w-10 h-10 rounded-full bg-[#051A24] text-white flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4" />
+                  <RealisticPhoneCallIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs uppercase font-mono text-[#273C46]">Call or Text Dispatch</span>
@@ -169,7 +177,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
 
               <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/70 text-[#051A24]">
                 <div className="w-10 h-10 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
-                  <Clock className="w-4 h-4" />
+                  <RealisticClockIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs uppercase font-mono text-[#273C46]">Operating Hours</span>
@@ -180,7 +188,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
 
               <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/70 text-[#051A24]">
                 <div className="w-10 h-10 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-4 h-4 text-emerald-700" />
+                  <RealisticShieldCheckIcon className="w-5 h-5" />
                 </div>
                 <div>
                   <span className="text-xs uppercase font-mono text-[#273C46]">Coverage Area</span>

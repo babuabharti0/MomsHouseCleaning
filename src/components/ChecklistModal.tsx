@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { RealisticXIcon, RealisticCheckCircle2Icon, RealisticShieldCheckIcon } from './RealisticIcons';
 import { Button } from './Button';
 
 interface ChecklistModalProps {
@@ -84,12 +84,12 @@ export const ChecklistModal: React.FC<ChecklistModalProps> = ({
           className="absolute top-3.5 right-3.5 sm:top-4 sm:right-4 p-1.5 rounded-full hover:bg-slate-100 text-slate-500 hover:text-[#051A24] transition-colors cursor-pointer z-10"
           aria-label="Close checklist"
         >
-          <X className="w-4 h-4" />
+          <RealisticXIcon className="w-4 h-4" />
         </button>
 
         <div className="mb-4">
           <div className="flex items-center gap-1.5 mb-0.5 text-[11px] uppercase font-mono tracking-widest text-emerald-700 font-semibold">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <RealisticShieldCheckIcon className="w-4 h-4" />
             <span>Mom's 50-Point Standard</span>
           </div>
           <h2 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
@@ -109,7 +109,7 @@ export const ChecklistModal: React.FC<ChecklistModalProps> = ({
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {cat.items.map((item, iIdx) => (
                   <li key={iIdx} className="flex items-start gap-2 text-xs sm:text-sm text-[#273C46]">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <RealisticCheckCircle2Icon className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>{item}</span>
                   </li>
                 ))}

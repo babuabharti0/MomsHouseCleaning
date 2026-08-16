@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, ArrowLeft, Quote, Sparkles } from 'lucide-react';
+import { RealisticArrowLeftIcon, RealisticQuoteIcon, RealisticStarIcon } from '../components/RealisticIcons';
 import { Button } from '../components/Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Footer } from '../components/Footer';
@@ -74,13 +74,13 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
   return (
     <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
           id="btn-testimonials-back-home"
           onClick={onNavigateHome}
           className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <RealisticArrowLeftIcon className="w-4 h-4" />
           <span>Home / Client Testimonials</span>
         </button>
 
@@ -93,12 +93,12 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
       <section
         ref={heroRef}
         id="testimonials-hero-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex flex-col items-center text-center"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col items-center text-center"
       >
         <p
           id="testimonials-hero-tagline"
           style={{ animationDelay: '0.1s' }}
-          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+          className={`font-mono text-xs md:text-sm text-[#051A24] uppercase tracking-widest font-medium mb-2 md:mb-3 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -108,7 +108,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
         <h1
           id="testimonials-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -118,7 +118,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
         <p
           id="testimonials-hero-subtitle"
           style={{ animationDelay: '0.3s' }}
-          className={`font-sans text-base md:text-lg text-[#273C46] max-w-lg mx-auto mt-6 leading-relaxed will-change-transform ${
+          className={`font-sans text-sm md:text-lg text-[#273C46] max-w-lg mx-auto mt-4 md:mt-6 leading-relaxed will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -127,7 +127,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
 
         <div
           style={{ animationDelay: '0.35s' }}
-          className={`flex items-center gap-3 mt-8 will-change-transform ${
+          className={`flex items-center justify-center gap-2.5 sm:gap-3 mt-6 md:mt-8 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -155,10 +155,10 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
       <section
         ref={gridRef}
         id="testimonials-masonry-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pb-24"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto"
       >
         <div
-          className={`columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 transition-opacity duration-700 ${
+          className={`columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4 md:gap-6 space-y-4 md:space-y-6 transition-opacity duration-700 ${
             gridInView ? 'opacity-100' : 'opacity-0'
           }`}
         >
@@ -172,7 +172,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
                 key={`${item.name}-${index}`}
                 id={`testimonial-card-${index}`}
                 style={{ animationDelay: `${(index % 6) * 0.08}s` }}
-                className={`break-inside-avoid rounded-[32px] p-8 mb-6 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 will-change-transform ${currentTheme} ${
+                className={`break-inside-avoid rounded-[20px] sm:rounded-[32px] p-5 sm:p-8 mb-4 md:mb-6 flex flex-col justify-between transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${currentTheme} ${
                   isDark
                     ? index % 4 === 1
                       ? 'shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] border border-[#051A24]'
@@ -185,18 +185,16 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
                 <div>
                   {/* Star Rating Header */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-[#ffab0f]">
+                    <div className="flex items-center gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star
+                        <RealisticStarIcon
                           key={i}
-                          className="w-4 h-4 fill-[#ffab0f] text-[#ffab0f]"
+                          className="w-4 h-4"
                         />
                       ))}
                     </div>
-                    <Quote
-                      className={`w-5 h-5 ${
-                        isDark ? 'text-white/20' : 'text-[#051A24]/15'
-                      }`}
+                    <RealisticQuoteIcon
+                      className="w-5 h-5 opacity-40"
                     />
                   </div>
 

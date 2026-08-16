@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall } from 'lucide-react';
+import { RealisticPhoneCallIcon } from './RealisticIcons';
 import { Button } from './Button';
 
 interface BottomNavProps {
@@ -19,7 +19,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({ onCallOrText }) => {
           variant="primary"
           size="sm"
           onClick={onCallOrText}
-          icon={<PhoneCall className="w-3.5 h-3.5" />}
+          icon={<RealisticPhoneCallIcon className="w-4 h-4" />}
           iconPosition="left"
           className="!py-2 !px-5"
         >

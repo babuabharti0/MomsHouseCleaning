@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Quote } from 'lucide-react';
+import { RealisticQuoteIcon } from './RealisticIcons';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 export const TestimonialSection: React.FC = () => {
@@ -50,25 +50,25 @@ export const TestimonialSection: React.FC = () => {
     <section
       id="testimonial-quote-section"
       ref={containerRef}
-      className="w-full py-12 px-6 flex flex-col items-center justify-center text-center"
+      className="w-full py-8 px-4 md:py-24 md:px-12 flex flex-col items-center justify-center text-center"
     >
-      <div className="w-full max-w-2xl flex flex-col items-center">
+      <div className="w-full max-w-4xl px-2 sm:px-6 md:px-12 flex flex-col items-center">
         {/* Quote Icon */}
         <div
           id="quote-icon"
           style={{ animationDelay: '0.1s' }}
-          className={`mb-6 text-slate-900 will-change-transform ${
+          className={`mb-4 md:mb-6 will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          <Quote className="w-6 h-6 text-slate-900 rotate-180" />
+          <RealisticQuoteIcon className="w-5 h-5 sm:w-6 sm:h-6 rotate-180" />
         </div>
 
         {/* Large Quote Text */}
         <blockquote
           id="quote-text"
           style={{ animationDelay: '0.2s' }}
-          className={`text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight font-normal mb-4 will-change-transform ${
+          className={`text-2xl sm:text-3xl md:text-[40px] lg:text-[44px] leading-[1.2] md:leading-[1.1] text-[#0D212C] tracking-tight font-normal mb-3 md:mb-4 will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -80,7 +80,7 @@ export const TestimonialSection: React.FC = () => {
         <p
           id="quote-author"
           style={{ animationDelay: '0.3s' }}
-          className={`italic text-sm text-[#273C46] font-normal mb-10 will-change-transform ${
+          className={`italic text-xs sm:text-sm text-[#273C46] font-normal mb-8 md:mb-10 will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -91,25 +91,25 @@ export const TestimonialSection: React.FC = () => {
         <div
           id="trust-badges"
           style={{ animationDelay: '0.4s' }}
-          className={`flex flex-wrap items-center justify-center gap-6 sm:gap-10 mb-12 will-change-transform ${
+          className={`flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-10 mb-8 md:mb-12 will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
           <div
             id="badge-angies-list"
-            className="w-[110px] text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
+            className="text-lg sm:text-[22px] md:text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
           >
             Angie's List
           </div>
           <div
             id="badge-home-advisor"
-            className="w-[120px] text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
+            className="text-lg sm:text-[22px] md:text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
           >
             Home Advisor
           </div>
           <div
             id="badge-bexar-county"
-            className="w-[140px] text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
+            className="text-lg sm:text-[22px] md:text-[24px] font-medium text-slate-900 tracking-tighter leading-none border-b border-slate-300 pb-1"
           >
             Bexar County DBA
           </div>
@@ -120,7 +120,7 @@ export const TestimonialSection: React.FC = () => {
           ref={parallaxRef}
           id="parallax-image-container"
           style={{ animationDelay: '0.5s' }}
-          className={`w-full max-w-xs overflow-hidden rounded-2xl shadow-lg relative h-[380px] sm:h-[440px] will-change-transform ${
+          className={`w-full max-w-xs overflow-hidden rounded-2xl md:rounded-3xl shadow-lg relative h-[320px] sm:h-[380px] md:h-[440px] will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >

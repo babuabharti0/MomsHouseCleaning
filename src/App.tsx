@@ -176,7 +176,11 @@ export default function App() {
       <GlobalCursorTrail />
 
       {/* 0. FIXED DYNAMIC GLASSMORPHISM NAVBAR */}
-      <Navbar currentRoute={currentRoute} onNavigate={handleNavbarNavigation} />
+      <Navbar 
+        currentRoute={currentRoute} 
+        onNavigate={handleNavbarNavigation}
+        onOpenEstimate={() => handleOpenEstimate('General Inquiries')} 
+      />
 
       {/* Main Content Area with top offset for fixed navbar */}
       <div className="w-full pt-20 flex flex-col items-center">

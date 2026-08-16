@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Calendar, ArrowRight } from 'lucide-react';
+import { RealisticSparklesIcon, RealisticCalendarIcon } from './RealisticIcons';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 interface ProjectItemData {
@@ -56,30 +56,31 @@ const ProjectCard: React.FC<{ item: ProjectItemData; index: number }> = ({
       style={{ animationDelay: `${index * 0.15}s` }}
     >
       {/* Offset text block */}
-      <div className="ml-6 sm:ml-20 md:ml-28 mb-4 md:mb-6 max-w-xl">
+      <div className="ml-2 sm:ml-12 md:ml-28 mb-3 md:mb-6 max-w-xl">
         <h3
           id={`project-title-${item.id}`}
-          className="font-mondwest text-2xl md:text-3xl font-semibold text-[#051A24] tracking-tight mb-2"
+          className="font-mondwest text-xl sm:text-2xl md:text-3xl font-semibold text-[#051A24] tracking-tight mb-2"
         >
           {item.title}
         </h3>
         <p
           id={`project-desc-${item.id}`}
-          className="text-sm md:text-base text-[#051A24]/80 leading-relaxed font-normal"
+          className="text-xs sm:text-sm md:text-base text-[#051A24]/80 leading-relaxed font-normal"
         >
           {item.description}
         </p>
       </div>
 
       {/* Full-width image below */}
-      <div className="w-full overflow-hidden rounded-2xl shadow-lg group">
+      <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-lg group">
         <img
           id={`project-img-${item.id}`}
           src={item.image}
           alt={item.alt}
           loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
-          className="w-full h-[280px] sm:h-[380px] md:h-[480px] object-cover rounded-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+          className="w-full h-[240px] sm:h-[340px] md:h-[480px] object-cover rounded-2xl md:rounded-3xl transition-transform duration-700 md:group-hover:scale-[1.02]"
         />
       </div>
     </div>
@@ -92,37 +93,37 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="specialty-projects-section"
-      className="w-full max-w-[1200px] mx-auto px-6 py-12"
+      className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto"
       aria-label="Specialty Cleaning Projects"
     >
       {/* Core Services Summary Card */}
       <div
         ref={summaryRef}
         style={{ animationDelay: '0.1s' }}
-        className={`w-full mb-16 rounded-[32px] md:rounded-[40px] bg-slate-50/90 border border-slate-200/80 p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 ${
+        className={`w-full mb-8 md:mb-16 rounded-[24px] sm:rounded-[36px] md:rounded-[40px] bg-slate-50/90 border border-slate-200/80 p-5 sm:p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 ${
           summaryInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
       >
         <div className="max-w-2xl">
           <div className="flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-widest text-[#051A24]/60 font-semibold">
-            <Calendar className="w-3.5 h-3.5" />
+            <RealisticCalendarIcon className="w-4 h-4" />
             <span>Service Flexibility</span>
           </div>
-          <h2 className="font-mondwest text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-3">
+          <h2 className="font-mondwest text-xl sm:text-2xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-2 md:mb-3">
             Custom Scheduled Housekeeping
           </h2>
-          <p className="text-sm md:text-base text-[#051A24] leading-relaxed font-normal">
+          <p className="text-xs sm:text-sm md:text-base text-[#051A24] leading-relaxed font-normal">
             We specialize in weekly, biweekly, or monthly scheduled cleanings. We also specialize in "move outs/clean outs" and "make readies". Spring cleaning/detail cleaning are available upon request.
           </p>
         </div>
 
-        <div className="shrink-0 flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 text-xs font-mono font-medium text-[#051A24] shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-mono font-medium text-[#051A24] shadow-sm">
+          <RealisticSparklesIcon className="w-4 h-4" />
           <span>Flexible Scheduling</span>
         </div>
       </div>
 
-      <div className="flex flex-col gap-16 md:gap-20">
+      <div className="flex flex-col gap-10 md:gap-20">
         {PROJECTS.map((project, index) => (
           <ProjectCard key={project.id} item={project} index={index} />
         ))}

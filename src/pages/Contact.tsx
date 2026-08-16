@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import {
-  PhoneCall,
-  CheckCircle,
-  CheckCircle2,
-  Sparkles,
-  ArrowLeft,
-  Facebook,
-  Linkedin,
-  Globe,
-  Share2,
-  Mail,
-  Send,
-  ShieldCheck,
-  CreditCard,
-} from 'lucide-react';
+  RealisticPhoneCallIcon,
+  RealisticCheckCircleIcon,
+  RealisticCheckCircle2Icon,
+  RealisticSparklesIcon,
+  RealisticArrowLeftIcon,
+  RealisticFacebookIcon,
+  RealisticLinkedinIcon,
+  RealisticGlobeIcon,
+  RealisticShareIcon,
+  RealisticXSocialIcon,
+  RealisticSendIcon,
+  RealisticShieldCheckIcon,
+  RealisticCreditCardIcon,
+} from '../components/RealisticIcons';
 import { Button } from '../components/Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Footer } from '../components/Footer';
@@ -86,13 +86,13 @@ export const Contact: React.FC<ContactPageProps> = ({
   return (
     <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation Bar */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
           id="btn-contact-back-home"
           onClick={onNavigateHome}
           className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <RealisticArrowLeftIcon className="w-4 h-4" />
           <span>Home / Contact Us</span>
         </button>
 
@@ -105,13 +105,13 @@ export const Contact: React.FC<ContactPageProps> = ({
       <section
         ref={heroRef}
         id="contact-hero-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex flex-col items-center text-center"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col items-center text-center"
       >
         {/* Tagline */}
         <p
           id="contact-hero-tagline"
           style={{ animationDelay: '0.1s' }}
-          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+          className={`font-mono text-xs md:text-sm text-[#051A24] uppercase tracking-widest font-medium mb-2 md:mb-3 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -122,7 +122,7 @@ export const Contact: React.FC<ContactPageProps> = ({
         <h1
           id="contact-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -133,7 +133,7 @@ export const Contact: React.FC<ContactPageProps> = ({
       {/* Two-Column Conversion Layout */}
       <section
         id="contact-main-grid"
-        className="w-full max-w-[1200px] mx-auto px-6 pb-24 md:pb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-20 items-start"
       >
         {/* LEFT COLUMN (THE REACT FORM & SOCIALS) */}
         <div
@@ -144,7 +144,7 @@ export const Contact: React.FC<ContactPageProps> = ({
             leftColInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          <div className="bg-white rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-8 md:p-10 border border-slate-100/80">
+          <div className="bg-white rounded-[24px] sm:rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-5 sm:p-8 md:p-10 border border-slate-100/80">
             <div className="mb-6">
               <h2
                 id="contact-form-title"
@@ -163,7 +163,7 @@ export const Contact: React.FC<ContactPageProps> = ({
                 className="p-6 bg-[#EBF5FB] border border-[#051A24]/10 rounded-2xl flex flex-col items-center text-center gap-3 animate-fade-in-up"
               >
                 <div className="w-12 h-12 rounded-full bg-[#051A24] text-white flex items-center justify-center">
-                  <CheckCircle2 className="w-6 h-6" />
+                  <RealisticCheckCircle2Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
                   Estimate Request Received!
@@ -304,7 +304,7 @@ export const Contact: React.FC<ContactPageProps> = ({
                   size="md"
                   disabled={isSubmitting}
                   className="w-full mt-2 shadow-md"
-                  icon={<Send className="w-4 h-4" />}
+                  icon={<RealisticSendIcon className="w-4 h-4" />}
                 >
                   {isSubmitting ? 'Sending Request...' : 'Get a Free Estimate'}
                 </Button>
@@ -329,9 +329,9 @@ export const Contact: React.FC<ContactPageProps> = ({
                 rel="noreferrer"
                 id="social-facebook"
                 aria-label="Facebook"
-                className="p-2 rounded-full hover:bg-slate-100 transition-colors text-[#051A24] hover:opacity-70"
+                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
               >
-                <Facebook className="w-5 h-5" />
+                <RealisticFacebookIcon className="w-5 h-5" />
               </a>
 
               {/* X (Twitter) */}
@@ -341,11 +341,9 @@ export const Contact: React.FC<ContactPageProps> = ({
                 rel="noreferrer"
                 id="social-x"
                 aria-label="X (formerly Twitter)"
-                className="p-2 rounded-full hover:bg-slate-100 transition-colors text-[#051A24] hover:opacity-70"
+                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
+                <RealisticXSocialIcon className="w-5 h-5" />
               </a>
 
               {/* LinkedIn */}
@@ -355,9 +353,9 @@ export const Contact: React.FC<ContactPageProps> = ({
                 rel="noreferrer"
                 id="social-linkedin"
                 aria-label="LinkedIn"
-                className="p-2 rounded-full hover:bg-slate-100 transition-colors text-[#051A24] hover:opacity-70"
+                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
+                <RealisticLinkedinIcon className="w-5 h-5" />
               </a>
 
               {/* Google */}
@@ -367,9 +365,9 @@ export const Contact: React.FC<ContactPageProps> = ({
                 rel="noreferrer"
                 id="social-google"
                 aria-label="Google"
-                className="p-2 rounded-full hover:bg-slate-100 transition-colors text-[#051A24] hover:opacity-70"
+                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
               >
-                <Globe className="w-5 h-5" />
+                <RealisticGlobeIcon className="w-5 h-5" />
               </a>
 
               {/* Nextdoor */}
@@ -379,9 +377,9 @@ export const Contact: React.FC<ContactPageProps> = ({
                 rel="noreferrer"
                 id="social-nextdoor"
                 aria-label="Nextdoor"
-                className="p-2 rounded-full hover:bg-slate-100 transition-colors text-[#051A24] hover:opacity-70 font-bold text-xs"
+                className="p-1 rounded-full hover:bg-slate-100 transition-colors font-bold text-xs"
               >
-                <Share2 className="w-5 h-5" />
+                <RealisticShareIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -405,8 +403,8 @@ export const Contact: React.FC<ContactPageProps> = ({
               <h3 className="text-xl font-semibold text-[#051A24]">
                 Call or Text Us
               </h3>
-              <span className="p-2 rounded-full bg-slate-100 text-[#051A24]">
-                <PhoneCall className="w-4 h-4" />
+              <span className="p-1.5 rounded-full bg-slate-100">
+                <RealisticPhoneCallIcon className="w-5 h-5" />
               </span>
             </div>
 
@@ -422,7 +420,7 @@ export const Contact: React.FC<ContactPageProps> = ({
 
             <div className="flex flex-col gap-4 text-sm text-[#273C46]">
               <div className="flex items-start gap-3">
-                <CreditCard className="w-5 h-5 text-[#051A24] flex-shrink-0 mt-0.5" />
+                <RealisticCreditCardIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed font-normal">
                   <strong className="text-[#051A24] font-medium block">
                     Flexible Payment Methods:
@@ -432,7 +430,7 @@ export const Contact: React.FC<ContactPageProps> = ({
               </div>
 
               <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[#051A24] flex-shrink-0 mt-0.5" />
+                <RealisticShieldCheckIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed font-normal">
                   <strong className="text-[#051A24] font-medium block">
                     Price Match Promise:
@@ -449,7 +447,7 @@ export const Contact: React.FC<ContactPageProps> = ({
             className="bg-[#051A24] text-[#F6FCFF] rounded-[32px] p-8 md:p-10 mt-6 shadow-xl"
           >
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles className="w-4 h-4 text-[#F6FCFF]" />
+              <RealisticSparklesIcon className="w-5 h-5" />
               <h3 className="text-xl font-semibold text-[#F6FCFF]">
                 Our Guarantee
               </h3>
@@ -461,19 +459,19 @@ export const Contact: React.FC<ContactPageProps> = ({
 
             <div className="flex flex-col gap-3 mb-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#E0EBF0] flex-shrink-0" />
+                <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
                   Insured and Bonded for YOUR PROTECTION.
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#E0EBF0] flex-shrink-0" />
+                <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
                   Registered with Bexar Country (D.B.A.)
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <CheckCircle className="w-5 h-5 text-[#E0EBF0] flex-shrink-0" />
+                <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
                   Angie certified & References Available.
                 </span>

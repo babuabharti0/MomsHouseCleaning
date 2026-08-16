@@ -25,9 +25,9 @@ export const Button: React.FC<ButtonProps> = ({
     'inline-flex items-center justify-center font-medium rounded-full transition-all duration-200 cursor-pointer select-none active:scale-[0.98] whitespace-nowrap text-center';
 
   const sizeClasses = {
-    sm: 'px-5 py-2 text-xs tracking-tight gap-1.5',
-    md: 'px-7 py-3 text-sm md:text-base tracking-tight gap-2',
-    lg: 'px-8 py-3.5 text-base md:text-lg tracking-tight gap-2.5',
+    sm: 'px-4 py-2 text-xs md:px-5 md:py-2.5 md:text-sm tracking-tight gap-1.5',
+    md: 'px-4 py-2 text-sm md:px-7 md:py-3.5 md:text-base tracking-tight gap-2',
+    lg: 'px-4 py-2.5 text-sm md:px-8 md:py-4 md:text-xl tracking-tight gap-2.5',
   };
 
   const variantClasses = {

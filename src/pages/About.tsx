@@ -1,12 +1,12 @@
 import React from 'react';
 import {
-  ArrowLeft,
-  Radio,
-  Volume2,
-  Sparkles,
-  ShieldCheck,
-  Users,
-} from 'lucide-react';
+  RealisticArrowLeftIcon,
+  RealisticRadioIcon,
+  RealisticVolume2Icon,
+  RealisticSparklesIcon,
+  RealisticShieldCheckIcon,
+  RealisticUsersIcon,
+} from '../components/RealisticIcons';
 import { Button } from '../components/Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import { Footer } from '../components/Footer';
@@ -36,8 +36,8 @@ const AboutAudioPlayer: React.FC<AboutAudioPlayerProps> = ({
     >
       <div>
         <div className="flex items-center gap-2 mb-3">
-          <span className="inline-flex p-1.5 rounded-full bg-slate-100 text-[#051A24]">
-            <Radio className="w-4 h-4" />
+          <span className="inline-flex p-1.5 rounded-full bg-slate-100">
+            <RealisticRadioIcon className="w-4 h-4" />
           </span>
           <span className="font-mono text-xs uppercase tracking-widest text-[#273C46] font-medium">
             {station}
@@ -62,7 +62,7 @@ const AboutAudioPlayer: React.FC<AboutAudioPlayerProps> = ({
 
         <div className="flex items-center justify-between text-xs font-mono text-[#051A24]/70 pt-1">
           <span className="flex items-center gap-1.5">
-            <Volume2 className="w-3.5 h-3.5 text-[#051A24]" />
+            <RealisticVolume2Icon className="w-4 h-4" />
             San Antonio Airwaves
           </span>
           <span className="text-[#051A24] font-medium">Broadcast Quality</span>
@@ -104,13 +104,13 @@ export const About: React.FC<AboutPageProps> = ({
   return (
     <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation */}
-      <div className="w-full max-w-[1200px] mx-auto px-6 pt-6 pb-2 flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
           id="btn-about-back-home"
           onClick={onNavigateHome}
           className="flex items-center gap-2 text-xs md:text-sm font-mono uppercase tracking-wider text-[#051A24]/80 hover:text-[#051A24] transition-colors cursor-pointer py-1.5 px-3 rounded-full bg-slate-100/80 hover:bg-slate-200/80"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <RealisticArrowLeftIcon className="w-4 h-4" />
           <span>Home / About Us</span>
         </button>
 
@@ -123,12 +123,12 @@ export const About: React.FC<AboutPageProps> = ({
       <section
         ref={heroRef}
         id="about-hero-section"
-        className="w-full max-w-[1200px] mx-auto px-6 pt-8 pb-12 md:pt-12 md:pb-16 flex flex-col items-center text-center"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col items-center text-center"
       >
         <p
           id="about-hero-tagline"
           style={{ animationDelay: '0.1s' }}
-          className={`font-mono text-sm text-[#051A24] uppercase tracking-widest font-medium mb-3 will-change-transform ${
+          className={`font-mono text-xs md:text-sm text-[#051A24] uppercase tracking-widest font-medium mb-2 md:mb-3 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -138,7 +138,7 @@ export const About: React.FC<AboutPageProps> = ({
         <h1
           id="about-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[48px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -150,11 +150,11 @@ export const About: React.FC<AboutPageProps> = ({
       <section
         ref={narrativeRef}
         id="about-founders-narrative"
-        className="w-full max-w-[1200px] mx-auto px-6 py-8 md:py-16"
+        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto"
       >
         <div
           style={{ animationDelay: '0.2s' }}
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center will-change-transform ${
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 lg:gap-16 items-center will-change-transform ${
             narrativeInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -164,7 +164,7 @@ export const About: React.FC<AboutPageProps> = ({
             className="flex flex-col gap-6 text-[#051A24] text-base md:text-lg leading-relaxed font-normal"
           >
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#051A24]/70 font-semibold mb-1">
-              <Users className="w-4 h-4 text-[#051A24]" />
+              <RealisticUsersIcon className="w-4 h-4" />
               <span>Meet Glen & Lisa Talley</span>
             </div>
 
@@ -195,14 +195,14 @@ export const About: React.FC<AboutPageProps> = ({
 
           {/* RIGHT COLUMN (The Image) */}
           <div id="founders-image-column" className="flex flex-col items-center">
-            <div className="w-full overflow-hidden rounded-[32px] shadow-lg border border-slate-100 bg-[#F6FCFF]">
+            <div className="w-full overflow-hidden rounded-[32px] shadow-lg border border-slate-100 bg-[#F6FCFF] aspect-square">
               <img
                 id="founders-image"
                 src={img01}
                 alt="Glen and Lisa Talley, owners of Mom's House Cleaning"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[360px] sm:h-[440px] object-cover rounded-[32px] hover:scale-105 transition-transform duration-700 will-change-transform"
+                className="w-full h-full aspect-square object-cover rounded-[32px] hover:scale-105 transition-transform duration-700 will-change-transform"
               />
             </div>
             <p
@@ -223,12 +223,12 @@ export const About: React.FC<AboutPageProps> = ({
       >
         <div
           style={{ animationDelay: '0.15s' }}
-          className={`max-w-[1000px] mx-auto flex flex-col items-center will-change-transform ${
+          className={`w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto flex flex-col items-center will-change-transform ${
             mediaInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
           <div className="flex items-center gap-2 mb-2">
-            <Sparkles className="w-4 h-4 text-[#051A24]" />
+            <RealisticSparklesIcon className="w-4 h-4" />
             <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/70 font-semibold">
               Radio & Broadcast Media
             </span>
@@ -269,7 +269,7 @@ export const About: React.FC<AboutPageProps> = ({
       <section
         ref={philosophyRef}
         id="about-cleaning-philosophy"
-        className="w-full max-w-[1000px] mx-auto py-20 px-6 flex flex-col items-center"
+        className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto py-20 flex flex-col items-center"
       >
         <div
           style={{ animationDelay: '0.2s' }}
@@ -314,7 +314,7 @@ export const About: React.FC<AboutPageProps> = ({
           >
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <Sparkles className="w-5 h-5 text-[#F6FCFF]" />
+                <RealisticSparklesIcon className="w-5 h-5" />
                 <h3 className="font-mondwest text-2xl md:text-3xl text-[#F6FCFF] font-semibold tracking-tight">
                   Our Guarantee
                 </h3>
@@ -347,7 +347,7 @@ export const About: React.FC<AboutPageProps> = ({
           >
             <div>
               <div className="flex items-center gap-2 mb-3">
-                <ShieldCheck className="w-5 h-5 text-[#051A24]" />
+                <RealisticShieldCheckIcon className="w-5 h-5" />
                 <h3 className="font-mondwest text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight">
                   Safety & Protection
                 </h3>

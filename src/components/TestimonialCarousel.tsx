@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { RealisticChevronLeftIcon, RealisticChevronRightIcon, RealisticStarIcon } from './RealisticIcons';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 interface Testimonial {
@@ -64,6 +64,7 @@ export const TestimonialCarousel: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const total = TESTIMONIALS.length;
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const touchStartX = useRef<number | null>(null);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % total);
@@ -73,13 +74,31 @@ export const TestimonialCarousel: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + total) % total);
   };
 
-  // Auto-scroll every 3 seconds, paused on hover
+  // Touch Swipe Handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+
+    if (diff > 50) {
+      nextSlide();
+    } else if (diff < -50) {
+      prevSlide();
+    }
+    touchStartX.current = null;
+  };
+
+  // Auto-scroll every 3.5 seconds, paused on hover
   useEffect(() => {
     if (isHovered) return;
 
     timeoutRef.current = setInterval(() => {
       nextSlide();
-    }, 3000);
+    }, 3500);
 
     return () => {
       if (timeoutRef.current) clearInterval(timeoutRef.current);
@@ -90,14 +109,14 @@ export const TestimonialCarousel: React.FC = () => {
     <section
       id="testimonial-carousel-section"
       ref={ref}
-      className="w-full py-20 px-6 overflow-hidden"
+      className="w-full py-8 px-4 md:py-24 md:px-12 overflow-hidden"
     >
       <div className="w-full max-w-5xl mx-auto flex flex-col md:items-end">
         {/* Header Row */}
-        <div className="w-full md:max-w-4xl flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+        <div className="w-full md:max-w-4xl flex flex-col sm:flex-row sm:items-end justify-between gap-3 md:gap-4 mb-6 md:mb-10">
           <h2
             id="testimonial-carousel-title"
-            className={`text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight ${
+            className={`text-2xl sm:text-3xl md:text-[40px] lg:text-[44px] leading-[1.15] md:leading-[1.1] text-[#0D212C] tracking-tight ${
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -113,10 +132,10 @@ export const TestimonialCarousel: React.FC = () => {
           >
             <div className="flex items-center gap-1 text-black">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-black text-black" />
+                <RealisticStarIcon key={i} className="w-4 h-4 sm:w-5 sm:h-5" />
               ))}
             </div>
-            <span className="text-sm font-medium text-[#0D212C] ml-1">
+            <span className="text-xs sm:text-sm font-medium text-[#0D212C] ml-1">
               Angie Certified 5/5
             </span>
           </div>
@@ -128,9 +147,11 @@ export const TestimonialCarousel: React.FC = () => {
           className="w-full md:max-w-4xl"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Card Viewport */}
-          <div className="relative overflow-hidden min-h-[320px] py-4">
+          <div className="relative overflow-hidden min-h-[280px] sm:min-h-[320px] py-2 md:py-4">
             <div
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
               style={{
@@ -140,20 +161,20 @@ export const TestimonialCarousel: React.FC = () => {
               {TESTIMONIALS.map((t, idx) => (
                 <div
                   key={t.id}
-                  className="w-full shrink-0 px-2 sm:px-3 flex justify-center"
+                  className="w-full shrink-0 px-1 sm:px-3 flex justify-center"
                 >
                   <div
                     id={`testimonial-card-${t.id}`}
-                    className={`w-full max-w-[427.5px] bg-white rounded-[32px] md:rounded-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] px-6 md:pl-10 md:pr-24 py-8 flex flex-col justify-between border border-slate-100/80 transition-all duration-500 ${
+                    className={`w-full max-w-[427.5px] bg-white rounded-[28px] sm:rounded-[36px] md:rounded-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-6 sm:p-8 md:pl-10 md:pr-16 py-6 md:py-8 flex flex-col justify-between border border-slate-100/80 transition-all duration-500 ${
                       idx === currentIndex ? 'opacity-100 scale-100' : 'opacity-40 scale-95'
                     }`}
                   >
                     <div>
                       {/* SVG Quote mark icon */}
-                      <div className="mb-4 text-[#0D212C]/20">
+                      <div className="mb-3 text-[#0D212C]/20">
                         <svg
-                          width="28"
-                          height="22"
+                          width="24"
+                          height="18"
                           viewBox="0 0 28 22"
                           fill="currentColor"
                           xmlns="http://www.w3.org/2000/svg"
@@ -165,26 +186,26 @@ export const TestimonialCarousel: React.FC = () => {
                       {/* Quote text */}
                       <p
                         id={`testimonial-quote-${t.id}`}
-                        className="text-base text-[#0D212C] leading-relaxed mb-6 font-normal"
+                        className="text-xs sm:text-sm md:text-base text-[#0D212C] leading-relaxed mb-4 md:mb-6 font-normal"
                       >
                         "{t.quote}"
                       </p>
                     </div>
 
                     {/* Author Row */}
-                    <div className="flex items-center gap-3 pt-2 border-t border-slate-100">
+                    <div className="flex items-center gap-3 pt-3 border-t border-slate-100">
                       <img
                         src={t.avatar}
                         alt={t.name}
                         loading="lazy"
                         referrerPolicy="no-referrer"
-                        className="w-12 h-12 rounded-full object-cover shadow-sm ring-2 ring-slate-100 shrink-0"
+                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover shadow-sm ring-2 ring-slate-100 shrink-0"
                       />
                       <div className="overflow-hidden">
-                        <h4 className="font-semibold text-sm text-[#051A24] truncate">
+                        <h4 className="font-semibold text-xs sm:text-sm text-[#051A24] truncate">
                           {t.name}
                         </h4>
-                        <p className="text-xs text-[#273C46] truncate">
+                        <p className="text-[11px] sm:text-xs text-[#273C46] truncate">
                           {t.location}
                         </p>
                       </div>
@@ -196,8 +217,8 @@ export const TestimonialCarousel: React.FC = () => {
           </div>
 
           {/* Navigation Controls & Pagination */}
-          <div className="flex items-center justify-between mt-6 px-4">
-            <div className="flex gap-2">
+          <div className="flex items-center justify-between mt-4 md:mt-6 px-2 sm:px-4">
+            <div className="flex gap-1.5 sm:gap-2">
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
@@ -206,29 +227,29 @@ export const TestimonialCarousel: React.FC = () => {
                   aria-label={`Go to slide ${i + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === currentIndex
-                      ? 'w-8 bg-[#051A24]'
+                      ? 'w-6 sm:w-8 bg-[#051A24]'
                       : 'w-2 bg-slate-300 hover:bg-slate-400'
                   }`}
                 />
               ))}
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <button
                 id="testimonial-prev-btn"
                 onClick={prevSlide}
                 aria-label="Previous testimonial"
-                className="w-12 h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-slate-100 transition-colors active:scale-95 cursor-pointer"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-slate-100 transition-colors active:scale-95 cursor-pointer"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <RealisticChevronLeftIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
               <button
                 id="testimonial-next-btn"
                 onClick={nextSlide}
                 aria-label="Next testimonial"
-                className="w-12 h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-slate-100 transition-colors active:scale-95 cursor-pointer"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-slate-100 transition-colors active:scale-95 cursor-pointer"
               >
-                <ChevronRight className="w-5 h-5" />
+                <RealisticChevronRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
             </div>
           </div>
