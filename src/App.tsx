@@ -61,14 +61,14 @@ export default function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Premium exponential easing curve
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 0.6,
       syncTouch: false, // CRITICAL: NEVER hijack native touch scrolling on mobile devices. It destroys UX.
-      touchMultiplier: 2,
+      touchMultiplier: 1.0,
       infinite: false,
     });
     lenisRef.current = lenis;

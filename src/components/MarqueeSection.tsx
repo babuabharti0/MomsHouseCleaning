@@ -45,7 +45,7 @@ const marqueeImages = [
 ];
 
 export const MarqueeSection: React.FC = () => {
-  // 20 images duplicated to create seamless 40-image infinite loop
+  // 20 images duplicated side-by-side to create seamless infinite CSS loop
   const displayImages = [...marqueeImages, ...marqueeImages];
 
   return (
@@ -54,7 +54,7 @@ export const MarqueeSection: React.FC = () => {
       className="w-full overflow-hidden mt-16 md:mt-20 mb-16 select-none"
       aria-label="Image gallery of cleaned spaces"
     >
-      <div className="flex animate-marquee will-change-transform">
+      <div className="flex w-max animate-[marquee_40s_linear_infinite] hover:[animation-play-state:paused] will-change-transform">
         {displayImages.map((img, index) => (
           <div
             key={`marquee-img-${index}`}
