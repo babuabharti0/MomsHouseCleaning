@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
 import {
   RealisticArrowLeftIcon,
   RealisticPhoneCallIcon,
-  RealisticCreditCardIcon,
   RealisticLockIcon,
   RealisticSparklesIcon,
   RealisticShieldCheckIcon,
@@ -37,40 +37,22 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
   const { ref: heroRef, isInView: heroInView } = useInViewAnimation(0.05);
   const { ref: consoleRef, isInView: consoleInView } = useInViewAnimation(0.1);
 
-  const [amount, setAmount] = useState<string>('');
-  const [isProcessing, setIsProcessing] = useState<boolean>(false);
+  const [customAmount, setCustomAmount] = useState<string>('');
   const [paymentSuccess, setPaymentSuccess] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
-  const handleCallOrText = () => {
-    window.open('tel:2103808066', '_self');
-  };
-
-  const handlePayPalCheckout = () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      alert('Please enter a valid payment amount.');
-      return;
-    }
-    setIsProcessing(true);
-    setTimeout(() => {
-      setIsProcessing(false);
-      setPaymentSuccess(true);
-    }, 800);
-  };
-
-  const handleDebitCreditCheckout = () => {
-    if (!amount || parseFloat(amount) <= 0) {
-      alert('Please enter a valid payment amount.');
-      return;
-    }
-    setIsProcessing(true);
-    setTimeout(() => {
-      setIsProcessing(false);
-      setPaymentSuccess(true);
-    }, 800);
-  };
+  const parsedAmount = parseFloat(customAmount);
+  const isAmountValid = !isNaN(parsedAmount) && parsedAmount > 0;
 
   return (
-    <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
+    <PayPalScriptProvider
+      options={{
+        clientId: 'AVGP-plycWakmbhyVna9G1ZPvKqC62VZQIHGu2MwhTI_DSlC8shGO-wansDgvp8lrCWqigRLwgWPw_Tx',
+        currency: 'USD',
+        intent: 'capture',
+      }}
+    >
+      <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
       {/* Breadcrumb / Back Navigation */}
       <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 mx-auto pt-6 pb-2 flex items-center justify-between">
         <button
@@ -167,12 +149,13 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                   Payment Processed!
                 </h3>
                 <p className="text-sm text-[#273C46] leading-relaxed">
-                  Thank you for your payment of <strong className="text-[#051A24] font-semibold">${amount || '0.00'} USD</strong>. A receipt has been sent to your email.
+                  Thank you for your payment of <strong className="text-[#051A24] font-semibold">${customAmount || '0.00'} USD</strong>. A receipt has been sent to your email.
                 </p>
                 <button
                   onClick={() => {
                     setPaymentSuccess(false);
-                    setAmount('');
+                    setCustomAmount('');
+                    setErrorMessage('');
                   }}
                   className="mt-2 text-xs font-mono uppercase tracking-wider text-[#051A24] underline hover:opacity-75 cursor-pointer"
                 >
@@ -180,7 +163,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                 </button>
               </div>
             ) : (
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-5">
                 {/* Price Input Field */}
                 <div className="flex flex-col gap-1.5">
                   <label
@@ -190,17 +173,30 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                     Please write in a price
                   </label>
 
-                  <div className="flex items-center bg-[#F6FCFF] border-2 border-[#0D212C]/10 rounded-lg p-3 focus-within:border-[#051A24] transition-colors">
+                  <div
+                    className={`flex items-center bg-[#F6FCFF] border-2 rounded-lg p-3 transition-colors ${
+                      errorMessage
+                        ? 'border-red-500/80 bg-red-50/20'
+                        : 'border-[#0D212C]/10 focus-within:border-[#051A24]'
+                    }`}
+                  >
                     <span className="text-[#051A24] font-semibold text-lg mr-2 select-none">
                       $
                     </span>
                     <input
                       id="payment-amount-input"
-                      type="number"
-                      min="1"
-                      step="any"
-                      value={amount}
-                      onChange={(e) => setAmount(e.target.value)}
+                      type="text"
+                      inputMode="decimal"
+                      value={customAmount}
+                      onChange={(e) => {
+                        // Strip non-numeric characters except single decimal point
+                        const sanitized = e.target.value.replace(/[^0-9.]/g, '');
+                        // Prevent multiple decimals
+                        const parts = sanitized.split('.');
+                        const formatted = parts.length > 2 ? `${parts[0]}.${parts.slice(1).join('')}` : sanitized;
+                        setCustomAmount(formatted);
+                        if (errorMessage) setErrorMessage('');
+                      }}
                       placeholder="0.00"
                       className="bg-transparent w-full text-base font-semibold text-[#051A24] placeholder:text-[#273C46]/30 focus:outline-none"
                     />
@@ -208,33 +204,64 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                       USD
                     </span>
                   </div>
+
+                  {errorMessage && (
+                    <p className="text-xs text-red-600 font-medium animate-fade-in">
+                      {errorMessage}
+                    </p>
+                  )}
                 </div>
 
-                {/* Checkout Buttons */}
-                <div className="flex flex-col gap-3 mt-2">
-                  {/* Button 1 (PayPal) */}
-                  <button
-                    id="btn-paypal-checkout"
-                    onClick={handlePayPalCheckout}
-                    disabled={isProcessing}
-                    className="bg-[#FFC439] text-black font-semibold rounded-full w-full py-3.5 px-6 shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2 cursor-pointer text-sm"
-                  >
-                    <span className="font-bold tracking-tight italic font-serif text-base">
-                      PayPal
-                    </span>
-                    <span>{isProcessing ? 'Processing...' : 'Pay with PayPal'}</span>
-                  </button>
+                {/* Gatekeeper notice when empty or zero */}
+                {!isAmountValid && (
+                  <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-3 text-xs text-amber-800 text-center">
+                    Please enter a valid amount greater than $0.00 to activate PayPal checkout.
+                  </div>
+                )}
 
-                  {/* Button 2 (Debit/Credit) */}
-                  <button
-                    id="btn-debit-credit-checkout"
-                    onClick={handleDebitCreditCheckout}
-                    disabled={isProcessing}
-                    className="bg-[#000000] text-white font-semibold rounded-full w-full py-3.5 px-6 shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-2.5 cursor-pointer text-sm"
-                  >
-                    <RealisticCreditCardIcon className="w-5 h-5" />
-                    <span>{isProcessing ? 'Processing...' : 'Debit or Credit Card Checkout'}</span>
-                  </button>
+                {/* Live Testing PayPal Buttons */}
+                <div
+                  id="paypal-button-container"
+                  className={`w-full transition-opacity duration-200 ${
+                    !isAmountValid ? 'opacity-50 pointer-events-none' : 'opacity-100'
+                  }`}
+                >
+                  <PayPalButtons
+                    key={customAmount || 'empty'}
+                    disabled={!isAmountValid}
+                    style={{ layout: 'vertical', shape: 'rect' }}
+                    createOrder={(data, actions) => {
+                      if (!isAmountValid) {
+                        setErrorMessage('Please enter a valid payment amount.');
+                        return Promise.reject(new Error('Invalid amount'));
+                      }
+                      return actions.order.create({
+                        purchase_units: [
+                          {
+                            amount: {
+                              value: customAmount || '0.00',
+                              currency_code: 'USD',
+                            },
+                          },
+                        ],
+                      });
+                    }}
+                    onApprove={(data, actions) => {
+                      if (actions.order) {
+                        return actions.order.capture().then((details) => {
+                          const givenName =
+                            details.payer?.name?.given_name || 'Valued Customer';
+                          alert('Transaction completed by ' + givenName);
+                          setPaymentSuccess(true);
+                        });
+                      }
+                      return Promise.resolve();
+                    }}
+                    onError={(err) => {
+                      console.error('PayPal Order Error:', err);
+                      setErrorMessage('Transaction could not be initialized. Please check the amount.');
+                    }}
+                  />
                 </div>
               </div>
             )}
@@ -300,7 +327,8 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
       <CopyrightBar />
 
       {/* Fixed Bottom Nav */}
-      <BottomNav onCallOrText={handleCallOrText} />
+      <BottomNav onCallOrText={() => window.open('tel:2103808066', '_self')} />
     </div>
+  </PayPalScriptProvider>
   );
 };
