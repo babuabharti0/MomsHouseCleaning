@@ -1071,6 +1071,25 @@ export function RealisticXSocialIcon({ className = "w-6 h-6", ...props }: React.
   );
 }
 
+export function RealisticAlignableIcon({ className = "w-6 h-6", ...props }: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
+      <defs>
+        <linearGradient id="alignableGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#7C3AED" />
+          <stop offset="100%" stopColor="#4C1D95" />
+        </linearGradient>
+      </defs>
+      <circle cx="16" cy="16" r="14" fill="url(#alignableGrad)" />
+      {/* Stylized A icon for Alignable */}
+      <path
+        d="M16 7L23 23H19.2L17.7 19.5H14.3L12.8 23H9L16 7ZM16 12.8L14.8 16.5H17.2L16 12.8Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
 export function RealisticSearchIcon({ className = "w-6 h-6", ...props }: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>

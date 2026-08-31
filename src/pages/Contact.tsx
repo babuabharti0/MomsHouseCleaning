@@ -10,6 +10,7 @@ import {
   RealisticGlobeIcon,
   RealisticShareIcon,
   RealisticXSocialIcon,
+  RealisticAlignableIcon,
   RealisticSendIcon,
   RealisticShieldCheckIcon,
   RealisticCreditCardIcon,
@@ -368,65 +369,83 @@ export const Contact: React.FC<ContactPageProps> = ({
               Connect With Us:
             </span>
 
-            <div className="flex items-center gap-4 text-[#051A24]">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-[#051A24]">
               {/* Facebook */}
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=100063775830569"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 id="social-facebook"
                 aria-label="Facebook"
-                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <RealisticFacebookIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Facebook</span>
               </a>
 
               {/* X (Twitter) */}
               <a
-                href="https://twitter.com"
+                href="https://x.com/momshouseclean"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 id="social-x"
                 aria-label="X (formerly Twitter)"
-                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <RealisticXSocialIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">X</span>
               </a>
 
               {/* LinkedIn */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/932992/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 id="social-linkedin"
                 aria-label="LinkedIn"
-                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <RealisticLinkedinIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">LinkedIn</span>
               </a>
 
               {/* Google */}
               <a
-                href="https://google.com"
+                href="https://www.google.com/search?q=Mom%27s+House+Cleaning"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 id="social-google"
                 aria-label="Google"
-                className="p-1 rounded-full hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <RealisticGlobeIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Google</span>
+              </a>
+
+              {/* Alignable */}
+              <a
+                href="https://www.alignable.com/san-antonio-tx/moms-house-cleaning?user=86864"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="social-alignable"
+                aria-label="Alignable"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
+              >
+                <RealisticAlignableIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Alignable</span>
               </a>
 
               {/* Nextdoor */}
               <a
-                href="https://nextdoor.com"
+                href="https://nextdoor.com/pages/moms-house-cleaning-san-antonio-tx/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 id="social-nextdoor"
                 aria-label="Nextdoor"
-                className="p-1 rounded-full hover:bg-slate-100 transition-colors font-bold text-xs"
+                className="flex items-center gap-1.5 py-1 px-2 rounded-full hover:bg-slate-100 transition-colors"
               >
                 <RealisticShareIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Nextdoor</span>
               </a>
             </div>
           </div>
