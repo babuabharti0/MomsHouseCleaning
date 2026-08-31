@@ -27,7 +27,9 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [address, setAddress] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   if (!isOpen) return null;
 
@@ -51,9 +53,42 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
 
   const estimate = calculateEstimatedPrice();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage('');
+
+    const formDataPayload = {
+      access_key: '536d3fde-53b7-400e-8d58-a78ed6276835',
+      name: name,
+      email: email || 'not-provided@estimate.local',
+      phone: phone,
+      service: serviceType,
+      message: `Estimate Calculation: $${estimate.low} - $${estimate.high} | SqFt: ${squareFeet} | Beds: ${bedrooms} | Baths: ${bathrooms} | Pets: ${hasPets ? 'Yes' : 'No'} | Location: ${address || 'San Antonio'}`,
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formDataPayload),
+      });
+
+      const result = await response.json();
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(result.message || 'Error submitting estimate. Please call (210) 380-8066.');
+      }
+    } catch (error) {
+      console.error('Web3Forms estimate submit error:', error);
+      setErrorMessage('Network issue. Please call or text (210) 380-8066.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -251,9 +286,21 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
                 />
               </div>
 
+              {errorMessage && (
+                <div className="p-2.5 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs">
+                  {errorMessage}
+                </div>
+              )}
+
               <div className="pt-1.5">
-                <Button variant="primary" size="sm" className="w-full py-2.5 text-xs sm:text-sm">
-                  Submit for Instant Dispatch Confirmation
+                <Button
+                  type="submit"
+                  variant="primary"
+                  size="sm"
+                  disabled={isSubmitting}
+                  className="w-full py-2.5 text-xs sm:text-sm"
+                >
+                  {isSubmitting ? 'Sending Request...' : 'Submit for Instant Dispatch Confirmation'}
                 </Button>
               </div>
             </form>

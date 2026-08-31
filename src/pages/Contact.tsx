@@ -55,6 +55,8 @@ export const Contact: React.FC<ContactPageProps> = ({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -63,20 +65,56 @@ export const Contact: React.FC<ContactPageProps> = ({
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: 'Initial Deep Clean',
-        message: '',
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    const formDataPayload = {
+      access_key: '536d3fde-53b7-400e-8d58-a78ed6276835',
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formDataPayload),
       });
-    }, 600);
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: 'Initial Deep Clean',
+          message: '',
+        });
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(
+          result.message || 'Failed to submit estimate request. Please call or text us directly at (210) 380-8066.'
+        );
+      }
+    } catch (error) {
+      console.error('Web3Forms Error:', error);
+      setSubmitStatus('error');
+      setErrorMessage('Network error occurred. Please call or text us directly at (210) 380-8066.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCallOrText = () => {
@@ -166,13 +204,16 @@ export const Contact: React.FC<ContactPageProps> = ({
                   <RealisticCheckCircle2Icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
-                  Estimate Request Received!
+                  Message Sent Successfully!
                 </h3>
                 <p className="text-sm text-[#273C46] leading-relaxed max-w-md">
-                  Thank you! We have received your message and will call or text you shortly with a personalized quote.
+                  We will contact you shortly with a personalized quote.
                 </p>
                 <button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    setSubmitStatus('idle');
+                  }}
                   className="mt-2 text-xs font-mono uppercase tracking-wider text-[#051A24] underline hover:opacity-75 cursor-pointer"
                 >
                   Send Another Message
@@ -184,6 +225,12 @@ export const Contact: React.FC<ContactPageProps> = ({
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-5"
               >
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-800 text-xs flex flex-col gap-1.5 animate-fade-in">
+                    <span className="font-semibold">{errorMessage}</span>
+                    <span>Or call/text us directly at <a href="tel:2103808066" className="underline font-bold">(210) 380-8066</a></span>
+                  </div>
+                )}
                 {/* Name */}
                 <div className="flex flex-col gap-1.5">
                   <label
