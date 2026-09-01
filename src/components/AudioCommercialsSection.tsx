@@ -23,18 +23,32 @@ const AudioCard: React.FC<AudioCardProps> = ({
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioCtxRef = useRef<boolean>(false);
 
-  const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      audioRef.current.play().catch(() => {
-        // Fallback simulated playback if media file not hosted
-        setIsPlaying(true);
-      });
-      setIsPlaying(true);
+  const handlePlay = () => {
+    setIsPlaying(true);
+
+    // Enforce mutual exclusivity: Pause all other audio elements on the page
+    document.querySelectorAll('audio').forEach((audio) => {
+      if (audio !== audioRef.current && !audio.paused) {
+        audio.pause();
+      }
+    });
+
+    // Fix single-channel (mono) audio by explicitly downmixing to 1 channel,
+    // which the browser then upmixes evenly to both stereo speakers.
+    if (!audioCtxRef.current && audioRef.current) {
+      try {
+        const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+        const ctx = new AudioContext();
+        const source = ctx.createMediaElementSource(audioRef.current);
+        source.channelCount = 1;
+        source.channelCountMode = 'explicit';
+        source.connect(ctx.destination);
+        audioCtxRef.current = true;
+      } catch (err) {
+        console.warn('Web Audio API could not initialize:', err);
+      }
     }
   };
 
@@ -70,10 +84,11 @@ const AudioCard: React.FC<AudioCardProps> = ({
       <div className="mt-2 space-y-3">
         <audio
           ref={audioRef}
+          crossOrigin="anonymous"
           src={audioSrc || 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'}
           onEnded={() => setIsPlaying(false)}
           onPause={() => setIsPlaying(false)}
-          onPlay={() => setIsPlaying(true)}
+          onPlay={handlePlay}
           controls
           className="w-full h-10 accent-[#051A24] rounded-lg"
         />
@@ -83,7 +98,7 @@ const AudioCard: React.FC<AudioCardProps> = ({
             <RealisticVolume2Icon className="w-4 h-4" />
             Radio Spot • San Antonio Broadcast
           </span>
-          <span className="text-[#051A24] font-medium">High Fidelity</span>
+          <span className="text-[#051A24] font-medium">High Fidelity Stereo</span>
         </div>
       </div>
     </div>
@@ -128,13 +143,14 @@ export const AudioCommercialsSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Right Column (Two audio cards) */}
+        {/* Right Column (Audio cards) */}
         <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           <AudioCard
             id="audio-card-1"
             title="From the Rock Vault"
             subtitle="Classic Spot"
             duration="0:30"
+            audioSrc="https://res.cloudinary.com/jbblynim/video/upload/v1788279792/moms_otdoap.mp3"
             delay="0.2s"
             isInView={isInView}
           />
@@ -143,7 +159,17 @@ export const AudioCommercialsSection: React.FC = () => {
             title="A Recent Mom's House Cleaning Audio Commercial"
             subtitle="Current Feature"
             duration="0:45"
+            audioSrc="https://res.cloudinary.com/jbblynim/video/upload/v1788279801/moms2_ps3ybe.mp3"
             delay="0.3s"
+            isInView={isInView}
+          />
+          <AudioCard
+            id="audio-card-3"
+            title="Mom's House Cleaning Specials"
+            subtitle="Promotional Feature"
+            duration="0:30"
+            audioSrc="https://res.cloudinary.com/jbblynim/video/upload/v1788279814/moms3_yigrjy.mp3"
+            delay="0.4s"
             isInView={isInView}
           />
         </div>
