@@ -108,7 +108,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
         <h1
           id="testimonials-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -118,7 +118,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
         <p
           id="testimonials-hero-subtitle"
           style={{ animationDelay: '0.3s' }}
-          className={`font-sans text-sm md:text-lg text-[#273C46] max-w-lg mx-auto mt-4 md:mt-6 leading-relaxed will-change-transform ${
+          className={`font-body text-sm md:text-lg text-[#273C46] max-w-lg mx-auto mt-4 md:mt-6 leading-relaxed will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -200,7 +200,7 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
 
                   {/* Review Quote */}
                   <p
-                    className={`font-sans text-sm md:text-base leading-relaxed my-4 opacity-90 ${
+                    className={`font-body text-sm md:text-base leading-relaxed my-4 opacity-90 ${
                       isDark ? 'text-[#E0EBF0]' : 'text-[#273C46]'
                     }`}
                   >

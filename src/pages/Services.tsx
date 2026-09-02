@@ -169,7 +169,7 @@ const ServiceBlock: React.FC<ServiceBlockProps> = ({ service, index }) => {
         </span>
         <h2
           id={`service-title-${service.id}`}
-          className="font-mondwest text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight mb-3"
+          className="font-heading text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight mb-3"
         >
           {service.title}
         </h2>
@@ -271,7 +271,7 @@ export const Services: React.FC<ServicesPageProps> = ({
         <h1
           id="services-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >

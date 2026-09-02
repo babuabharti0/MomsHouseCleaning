@@ -161,7 +161,7 @@ export const Contact: React.FC<ContactPageProps> = ({
         <h1
           id="contact-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -187,7 +187,7 @@ export const Contact: React.FC<ContactPageProps> = ({
             <div className="mb-6">
               <h2
                 id="contact-form-title"
-                className="font-mondwest text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight mb-2"
+                className="font-heading text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight mb-2"
               >
                 Send Us a Message
               </h2>
@@ -204,7 +204,7 @@ export const Contact: React.FC<ContactPageProps> = ({
                 <div className="w-12 h-12 rounded-full bg-[#051A24] text-white flex items-center justify-center">
                   <RealisticCheckCircle2Icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
+                <h3 className="font-heading text-2xl text-[#051A24] font-semibold">
                   Message Sent Successfully!
                 </h3>
                 <p className="text-sm text-[#273C46] leading-relaxed max-w-md">
@@ -477,7 +477,7 @@ export const Contact: React.FC<ContactPageProps> = ({
             <a
               href="tel:2103808066"
               id="contact-phone-link"
-              className="font-mondwest text-3xl md:text-4xl text-[#051A24] tracking-tight block hover:opacity-80 transition-opacity font-semibold"
+              className="font-heading text-3xl md:text-4xl text-[#051A24] tracking-tight block hover:opacity-80 transition-opacity font-semibold"
             >
               210.380.8066
             </a>

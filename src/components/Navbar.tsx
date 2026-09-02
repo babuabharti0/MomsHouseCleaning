@@ -93,10 +93,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           className="flex items-baseline gap-1.5 cursor-pointer text-left focus-visible:ring-2 focus-visible:ring-[#051A24] focus-visible:outline-none rounded-lg p-1 group select-none shrink-0 whitespace-nowrap"
           aria-label="Mom's House Cleaning - Back to Home"
         >
-          <span className="font-mondwest text-2xl md:text-2xl text-[#051A24] font-semibold tracking-tight">
+          <span className="font-heading text-2xl md:text-2xl text-[#051A24] font-semibold tracking-tight">
             Mom's
           </span>
-          <span className="font-sans text-base md:text-lg text-[#051A24]/90 font-medium tracking-tight">
+          <span className="font-body text-base md:text-lg text-[#051A24]/90 font-medium tracking-tight">
             House Cleaning
           </span>
         </button>

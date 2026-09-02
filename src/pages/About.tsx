@@ -44,7 +44,7 @@ const AboutAudioPlayer: React.FC<AboutAudioPlayerProps> = ({
           </span>
         </div>
 
-        <h4 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight mb-3">
+        <h4 className="font-heading text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight mb-3">
           {title}
         </h4>
 
@@ -138,7 +138,7 @@ export const About: React.FC<AboutPageProps> = ({
         <h1
           id="about-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -236,7 +236,7 @@ export const About: React.FC<AboutPageProps> = ({
 
           <h2
             id="heading-community-voices"
-            className="font-mondwest text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight text-center mb-4"
+            className="font-heading text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight text-center mb-4"
           >
             Community Voices
           </h2>
@@ -281,7 +281,7 @@ export const About: React.FC<AboutPageProps> = ({
             Our Cleaning Philosophy
           </span>
 
-          <h2 className="font-mondwest text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight">
+          <h2 className="font-heading text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight">
             Rewarding You With Extra Time for Family
           </h2>
 
@@ -315,7 +315,7 @@ export const About: React.FC<AboutPageProps> = ({
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <RealisticSparklesIcon className="w-5 h-5" />
-                <h3 className="font-mondwest text-2xl md:text-3xl text-[#F6FCFF] font-semibold tracking-tight">
+                <h3 className="font-heading text-2xl md:text-3xl text-[#F6FCFF] font-semibold tracking-tight">
                   Our Guarantee
                 </h3>
               </div>
@@ -348,7 +348,7 @@ export const About: React.FC<AboutPageProps> = ({
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <RealisticShieldCheckIcon className="w-5 h-5" />
-                <h3 className="font-mondwest text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight">
+                <h3 className="font-heading text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight">
                   Safety & Protection
                 </h3>
               </div>

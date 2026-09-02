@@ -171,7 +171,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white">
+    <div className="min-h-screen w-full bg-[#F4F9FF] text-[#051A24] flex flex-col items-center relative overflow-x-hidden selection:bg-[#051A24] selection:text-white font-body">
       {/* GLOBAL FLOATING CURSOR TRAIL PHYSICS */}
       <GlobalCursorTrail />
 

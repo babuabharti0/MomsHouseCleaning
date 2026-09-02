@@ -53,7 +53,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
               <RealisticHeartIcon className="w-4 h-4" />
               <span>Family Owned Since 1999</span>
             </div>
-            <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
+            <h2 className="font-heading text-3xl font-semibold text-[#0D212C] mb-4">
               About Mom's House Cleaning
             </h2>
             <div className="space-y-4 text-sm text-[#273C46] leading-relaxed">
@@ -82,7 +82,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
               <RealisticCreditCardIcon className="w-4 h-4" />
               <span>Transparent & Convenient</span>
             </div>
-            <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
+            <h2 className="font-heading text-3xl font-semibold text-[#0D212C] mb-4">
               Payment Options
             </h2>
             <p className="text-sm text-[#273C46] mb-6">
@@ -114,7 +114,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
 
         {type === 'photos' && (
           <div>
-            <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-2">
+            <h2 className="font-heading text-3xl font-semibold text-[#0D212C] mb-2">
               Recent San Antonio Homes
             </h2>
             <p className="text-xs text-[#273C46] mb-4">
@@ -158,7 +158,7 @@ export const InfoModal: React.FC<InfoModalProps> = ({
               <RealisticMapPinIcon className="w-4 h-4" />
               <span>San Antonio, Texas</span>
             </div>
-            <h2 className="font-mondwest text-3xl font-semibold text-[#0D212C] mb-4">
+            <h2 className="font-heading text-3xl font-semibold text-[#0D212C] mb-4">
               Contact Mom's House Cleaning
             </h2>
             <div className="space-y-4 mb-6">

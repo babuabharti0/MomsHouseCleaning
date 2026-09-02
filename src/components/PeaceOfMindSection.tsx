@@ -71,7 +71,7 @@ export const PeaceOfMindSection: React.FC = () => {
         <h2
           id="peace-of-mind-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0D212C] tracking-tight ${
+          className={`font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0D212C] tracking-tight ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -89,7 +89,7 @@ export const PeaceOfMindSection: React.FC = () => {
           }`}
         >
           <div>
-            <h3 className="font-mondwest text-xl sm:text-2xl font-semibold text-[#051A24] mb-4 md:mb-6">
+            <h3 className="font-heading text-xl sm:text-2xl font-semibold text-[#051A24] mb-4 md:mb-6">
               Full Protection Standards
             </h3>
             <ul className="space-y-3 sm:space-y-4">

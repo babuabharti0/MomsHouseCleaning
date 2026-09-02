@@ -1,22 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Elsie:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @layer base {
   /* 1. NATIVE MOBILE BASELINE (Strictly 16px root, normal line heights) */
   html {
     font-size: 16px !important;
-    font-family: 'Caveat', cursive, sans-serif !important;
+    font-family: 'Playfair Display', serif !important;
     scroll-behavior: auto !important;
   }
 
   body {
-    font-family: 'Caveat', cursive, sans-serif !important;
+    font-family: 'Playfair Display', serif !important;
     font-size: 1rem !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
   }
 
-  h1, h2, h3, h4, h5, h6, .font-serif, .heading-title {
+  h1, h2, h3, h4, h5, h6, .font-heading, .heading-title {
     font-family: 'Archivo Black', sans-serif !important;
     font-weight: 900 !important;
     letter-spacing: -0.02em !important;
@@ -26,45 +25,52 @@
   /* 2. DESKTOP/TABLET ESCALATION (Activates only above 768px) */
   @media (min-width: 768px) {
     html {
-      font-size: 22px !important;
+      font-size: 20px !important;
     }
     body {
-      font-size: 1.2rem !important;
-      line-height: 1.9 !important;
+      font-size: 1.15rem !important;
+      line-height: 1.75 !important;
     }
-    .text-xs { font-size: 1rem !important; }
-    .text-sm { font-size: 1.25rem !important; }
-    .text-base { font-size: 1.5rem !important; }
-    .text-lg { font-size: 1.75rem !important; }
-    .text-xl { font-size: 2rem !important; }
-    .text-2xl { font-size: 2.5rem !important; }
-    .text-3xl { font-size: 3rem !important; }
-    .text-4xl { font-size: 3.75rem !important; }
-    .text-5xl { font-size: 4.5rem !important; }
+    .text-xs { font-size: 0.95rem !important; }
+    .text-sm { font-size: 1.15rem !important; }
+    .text-base { font-size: 1.35rem !important; }
+    .text-lg { font-size: 1.55rem !important; }
+    .text-xl { font-size: 1.85rem !important; }
+    .text-2xl { font-size: 2.25rem !important; }
+    .text-3xl { font-size: 2.75rem !important; }
+    .text-4xl { font-size: 3.5rem !important; }
+    .text-5xl { font-size: 4.25rem !important; }
   }
 }
 
 @theme {
-  --font-sans: 'Caveat', cursive, sans-serif;
-  --font-serif: 'Archivo Black', sans-serif;
-  --font-mono: 'Caveat', cursive;
-  --font-body: 'Caveat', cursive, sans-serif;
+  --font-heading: "Archivo Black", sans-serif;
+  --font-body: "Playfair Display", serif;
+  --font-accent: "Libre Baskerville", serif;
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body, 'Playfair Display', serif);
   color: #051A24;
   background-color: #F4F9FF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.font-mondwest {
-  font-family: var(--font-serif);
+.font-heading {
+  font-family: var(--font-heading, "Archivo Black", sans-serif) !important;
 }
 
 .font-body {
-  font-family: var(--font-sans);
+  font-family: var(--font-body, "Playfair Display", serif) !important;
+}
+
+.font-accent {
+  font-family: var(--font-accent, "Libre Baskerville", serif) !important;
+}
+
+.font-mondwest {
+  font-family: var(--font-heading, "Archivo Black", sans-serif) !important;
 }
 
 @keyframes fadeInUp {

@@ -43,7 +43,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         <h1
           id="hero-logo"
           style={{ animationDelay: '0.1s' }}
-          className={`font-mondwest text-[12vw] sm:text-[8vw] md:text-[56px] lg:text-[64px] font-semibold text-white tracking-tight leading-none mb-3 md:mb-4 will-change-transform ${
+          className={`font-heading text-[12vw] sm:text-[8vw] md:text-[56px] lg:text-[64px] font-semibold text-white tracking-tight leading-none mb-3 md:mb-4 will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -70,7 +70,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           }`}
         >
           <span className="block font-normal">A Passion for</span>
-          <span className="block font-mondwest font-semibold italic text-white">Cleaning Spaces.</span>
+          <span className="block font-heading font-semibold italic text-white">Cleaning Spaces.</span>
         </div>
 
         {/* Description Paragraphs */}

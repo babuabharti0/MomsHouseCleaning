@@ -88,7 +88,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
         <h1
           id="payment-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-mondwest text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -121,7 +121,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             <a
               href="tel:2103808066"
               id="payment-phone-link"
-              className="font-mondwest text-3xl sm:text-4xl text-[#051A24] tracking-tight font-semibold hover:opacity-80 transition-opacity"
+              className="font-heading text-3xl sm:text-4xl text-[#051A24] tracking-tight font-semibold hover:opacity-80 transition-opacity"
             >
               210.380.8066
             </a>
@@ -133,7 +133,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
 
           {/* STEP 2: The Payment Gateway Form */}
           <div id="checkout-gateway-form" className="w-full">
-            <h2 className="text-xl font-semibold text-[#0D212C] mb-6 text-center tracking-tight">
+            <h2 className="font-heading text-xl font-semibold text-[#0D212C] mb-6 text-center tracking-tight">
               Pay Mom's House Cleaning
             </h2>
 
@@ -145,7 +145,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
                 <div className="w-12 h-12 rounded-full bg-[#051A24] text-white flex items-center justify-center">
                   <RealisticCheckCircle2Icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-mondwest text-2xl text-[#051A24] font-semibold">
+                <h3 className="font-heading text-2xl text-[#051A24] font-semibold">
                   Payment Processed!
                 </h3>
                 <p className="text-sm text-[#273C46] leading-relaxed">
@@ -299,7 +299,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
           <button
             id="btn-payment-bottom-estimate"
             onClick={onNavigateContact}
-            className="bg-white text-[#051A24] font-medium px-8 py-3 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-100 hover:shadow-md hover:bg-slate-50 transition-all cursor-pointer text-sm font-sans"
+            className="bg-white text-[#051A24] font-medium px-8 py-3 rounded-full shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-100 hover:shadow-md hover:bg-slate-50 transition-all cursor-pointer text-sm font-body"
           >
             Contact Us for a FREE estimate.
           </button>

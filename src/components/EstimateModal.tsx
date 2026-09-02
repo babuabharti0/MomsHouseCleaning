@@ -118,7 +118,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
             <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center mb-3">
               <RealisticCheckCircle2Icon className="w-8 h-8" />
             </div>
-            <h3 className="font-mondwest text-2xl font-semibold text-[#051A24] mb-1.5">
+            <h3 className="font-heading text-2xl font-semibold text-[#051A24] mb-1.5">
               Estimate Request Received!
             </h3>
             <p className="text-xs sm:text-sm text-[#273C46] max-w-sm mb-4 leading-relaxed">
@@ -141,7 +141,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
                 <RealisticCalculatorIcon className="w-3.5 h-3.5" />
                 <span>San Antonio Custom Quote</span>
               </div>
-              <h2 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
+              <h2 className="font-heading text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
                 Get a Free Cleaning Estimate
               </h2>
               <p className="text-[11px] sm:text-xs text-[#273C46] mt-0.5">

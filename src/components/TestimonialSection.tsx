@@ -72,7 +72,7 @@ export const TestimonialSection: React.FC = () => {
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          <span className="font-mondwest font-semibold not-italic">INTEGRITY!</span>{' '}
+          <span className="font-heading font-semibold not-italic">INTEGRITY!</span>{' '}
           It remains the foundation of all success and wholeness.
         </blockquote>
 

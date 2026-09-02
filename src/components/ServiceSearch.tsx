@@ -189,7 +189,7 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
         </div>
         <h2
           id="service-search-heading"
-          className="font-mondwest text-3xl sm:text-4xl md:text-5xl text-[#051A24] font-semibold tracking-tight mb-2"
+          className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#051A24] font-semibold tracking-tight mb-2"
         >
           Find the exact service you need
         </h2>
@@ -209,7 +209,7 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
           placeholder="Search services (e.g., 'Oven', 'Blinds', 'Baseboards', 'Airbnb')..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full pl-12 sm:pl-14 pr-12 py-3.5 sm:py-4 bg-white/90 backdrop-blur-md border-2 border-[#0D212C]/10 rounded-full font-sans text-base sm:text-lg text-[#051A24] placeholder:text-slate-400 focus:outline-none focus:border-[#051A24] focus:ring-4 focus:ring-[#051A24]/10 shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all"
+          className="w-full pl-12 sm:pl-14 pr-12 py-3.5 sm:py-4 bg-white/90 backdrop-blur-md border-2 border-[#0D212C]/10 rounded-full font-body text-base sm:text-lg text-[#051A24] placeholder:text-slate-400 focus:outline-none focus:border-[#051A24] focus:ring-4 focus:ring-[#051A24]/10 shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all"
         />
         {query && (
           <button
@@ -311,7 +311,7 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
                 </div>
 
                 {/* Title */}
-                <h3 className="font-mondwest text-xl sm:text-2xl text-[#051A24] font-semibold tracking-tight mb-2.5 group-hover:text-[#051A24]">
+                <h3 className="font-heading text-xl sm:text-2xl text-[#051A24] font-semibold tracking-tight mb-2.5 group-hover:text-[#051A24]">
                   {service.name}
                 </h3>
 
@@ -353,10 +353,10 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
             <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-slate-400">
               <RealisticSearchIcon className="w-6 h-6" />
             </div>
-            <h4 className="font-mondwest text-2xl text-[#051A24] font-semibold mb-1">
+            <h4 className="font-heading text-2xl text-[#051A24] font-semibold mb-1">
               No matching services found
             </h4>
-            <p className="font-sans text-sm text-[#273C46] max-w-md mb-4">
+            <p className="font-body text-sm text-[#273C46] max-w-md mb-4">
               We couldn't find anything matching "<span className="font-semibold text-[#051A24]">{query}</span>" in{' '}
               {activeCategory === 'All' ? 'any category' : activeCategory}.
             </p>

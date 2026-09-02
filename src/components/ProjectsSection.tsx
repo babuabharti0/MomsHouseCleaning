@@ -59,7 +59,7 @@ const ProjectCard: React.FC<{ item: ProjectItemData; index: number }> = ({
       <div className="ml-2 sm:ml-12 md:ml-28 mb-3 md:mb-6 max-w-xl">
         <h3
           id={`project-title-${item.id}`}
-          className="font-mondwest text-xl sm:text-2xl md:text-3xl font-semibold text-[#051A24] tracking-tight mb-2"
+          className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-[#051A24] tracking-tight mb-2"
         >
           {item.title}
         </h3>
@@ -109,7 +109,7 @@ export const ProjectsSection: React.FC = () => {
             <RealisticCalendarIcon className="w-4 h-4" />
             <span>Service Flexibility</span>
           </div>
-          <h2 className="font-mondwest text-xl sm:text-2xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-2 md:mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-2 md:mb-3">
             Custom Scheduled Housekeeping
           </h2>
           <p className="text-xs sm:text-sm md:text-base text-[#051A24] leading-relaxed font-normal">

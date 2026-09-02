@@ -120,7 +120,7 @@ export const TestimonialCarousel: React.FC = () => {
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
-            What <span className="font-mondwest font-semibold italic">families</span> say
+            What <span className="font-heading font-semibold italic">families</span> say
           </h2>
 
           <div

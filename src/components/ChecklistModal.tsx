@@ -92,7 +92,7 @@ export const ChecklistModal: React.FC<ChecklistModalProps> = ({
             <RealisticShieldCheckIcon className="w-4 h-4" />
             <span>Mom's 50-Point Standard</span>
           </div>
-          <h2 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
+          <h2 className="font-heading text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
             Initial Deep Clean Master Checklist
           </h2>
           <p className="text-[11px] sm:text-xs text-[#273C46] mt-0.5">
@@ -103,7 +103,7 @@ export const ChecklistModal: React.FC<ChecklistModalProps> = ({
         <div className="space-y-6">
           {CHECKLIST_CATEGORIES.map((cat, idx) => (
             <div key={idx} className="bg-slate-50/80 rounded-2xl p-4 border border-slate-200/60">
-              <h3 className="font-mondwest text-lg font-semibold text-[#051A24] mb-3 border-b border-slate-200 pb-1.5">
+              <h3 className="font-heading text-lg font-semibold text-[#051A24] mb-3 border-b border-slate-200 pb-1.5">
                 {cat.title}
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">

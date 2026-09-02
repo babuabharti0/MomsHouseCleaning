@@ -70,7 +70,7 @@ const AudioCard: React.FC<AudioCardProps> = ({
               {subtitle}
             </span>
           </div>
-          <h4 className="font-mondwest text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
+          <h4 className="font-heading text-xl md:text-2xl font-semibold text-[#0D212C] tracking-tight">
             {title}
           </h4>
         </div>
@@ -130,7 +130,7 @@ export const AudioCommercialsSection: React.FC = () => {
 
           <h2
             id="audio-heading"
-            className="font-mondwest text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-3 md:mb-4"
+            className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-3 md:mb-4"
           >
             Let Us Do Your Dirty Work
           </h2>
