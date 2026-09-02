@@ -256,7 +256,7 @@ export const PartnerSection: React.FC = () => {
         {/* Heading */}
         <h2
           id="partner-heading"
-          className="font-heading text-[38px] sm:text-[48px] md:text-[56px] lg:text-[68px] leading-[1.08] text-[#0D212C] max-w-4xl tracking-tight mb-4 select-none"
+          className="font-heading text-[38px] sm:text-[48px] md:text-[56px] lg:text-[68px] leading-tight text-[#0D212C] max-w-4xl tracking-tight mb-4 select-none"
         >
           Let us do your dirty work
         </h2>

@@ -138,6 +138,24 @@ export const ALL_SERVICES: ServiceItem[] = [
     description: 'Carefully sliding sofas, credenzas, and bed frames to vacuum hidden dust bunnies and lost items.',
     features: ['Under-Couch Vacuum', 'Heavy Furniture Clearance', 'Hard Surface Mopping'],
   },
+  {
+    id: 17,
+    name: 'Yard Care & Perimeter Detailing',
+    category: 'Add-ons',
+    description: 'Outdoor lawn mowing, edging, leaf blowing, and exterior property clutter cleanup.',
+    features: ['Lawn Mowing & Edging', 'Debris & Leaf Removal', 'Driveway & Patio Blowout'],
+    tag: 'Outdoor Care',
+    popular: true,
+  },
+  {
+    id: 18,
+    name: 'Deep Steam Carpet & Rug Cleaning',
+    category: 'Packages',
+    description: 'Hot water fiber extraction, high-traffic walkway pre-treatment, and pet odor neutralizing.',
+    features: ['Deep Steam Extraction', 'Pet Stain & Odor Treatment', 'Fast-Drying & Residue-Free'],
+    tag: 'Fiber Refresh',
+    popular: true,
+  },
 ];
 
 export const CATEGORIES = ['All', 'Packages', 'Add-ons', 'Detailing', 'Maid', 'Rentals'] as const;

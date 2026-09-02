@@ -40,6 +40,8 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
     if (serviceType.includes('Move')) base = 220;
     if (serviceType.includes('Green')) base = 150;
     if (serviceType.includes('Airbnb')) base = 135;
+    if (serviceType.includes('Yard')) base = 110;
+    if (serviceType.includes('Carpet')) base = 160;
 
     const sqftAdd = Math.max(0, (squareFeet - 1000) * 0.045);
     const roomAdd = bedrooms * 15 + bathrooms * 25;
@@ -165,6 +167,8 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
                   <option value="Move Outs & Make Readies">Move Outs & Make Readies</option>
                   <option value="Short Term Rentals / Airbnb">Short Term Rentals / Airbnb Turnkey</option>
                   <option value="Mom's Gone Green">Mom's Gone Green (Eco-Friendly)</option>
+                  <option value="Yard Care">Yard Care (Mowing, Edging, Cleanup)</option>
+                  <option value="Carpet Cleaning">Carpet Cleaning (Deep Steam Extraction)</option>
                 </select>
               </div>
 

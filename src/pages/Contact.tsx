@@ -161,7 +161,7 @@ export const Contact: React.FC<ContactPageProps> = ({
         <h1
           id="contact-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-tight text-[#0D212C] font-semibold tracking-tight max-w-4xl will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -319,6 +319,8 @@ export const Contact: React.FC<ContactPageProps> = ({
                     <option value="Short Term Rentals / Airbnb">
                       Short Term Rentals / Airbnb
                     </option>
+                    <option value="Yard Care">Yard Care</option>
+                    <option value="Carpet Cleaning">Carpet Cleaning</option>
                     <option value="Extra & Additional Custom Services">
                       Extra & Additional Custom Services
                     </option>

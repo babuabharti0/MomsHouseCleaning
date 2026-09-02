@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer base {
   /* 1. NATIVE MOBILE BASELINE (Strictly 16px root, normal line heights) */
   html {
     font-size: 16px !important;
-    font-family: 'Playfair Display', serif !important;
+    font-family: 'Inter', sans-serif !important;
     scroll-behavior: auto !important;
   }
 
   body {
-    font-family: 'Playfair Display', serif !important;
+    font-family: 'Inter', sans-serif !important;
     font-size: 1rem !important;
     line-height: 1.6 !important;
   }
@@ -19,7 +19,16 @@
     font-family: 'Archivo Black', sans-serif !important;
     font-weight: 900 !important;
     letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
+    line-height: 1.15 !important;
+  }
+
+  h1, h2 {
+    line-height: 1.15 !important;
+  }
+
+  /* Force all <p>, <span>, <input>, and <select> elements to use this highly legible sans-serif font */
+  p, span, input, select, textarea, label, button, .font-body {
+    font-family: 'Inter', sans-serif !important;
   }
 
   /* 2. DESKTOP/TABLET ESCALATION (Activates only above 768px) */
@@ -45,12 +54,12 @@
 
 @theme {
   --font-heading: "Archivo Black", sans-serif;
-  --font-body: "Playfair Display", serif;
-  --font-accent: "Libre Baskerville", serif;
+  --font-body: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 body {
-  font-family: var(--font-body, 'Playfair Display', serif);
+  font-family: var(--font-body, 'Inter', sans-serif);
   color: #051A24;
   background-color: #F4F9FF;
   -webkit-font-smoothing: antialiased;
@@ -59,18 +68,20 @@ body {
 
 .font-heading {
   font-family: var(--font-heading, "Archivo Black", sans-serif) !important;
+  line-height: 1.15 !important;
 }
 
 .font-body {
-  font-family: var(--font-body, "Playfair Display", serif) !important;
+  font-family: var(--font-body, "Inter", sans-serif) !important;
 }
 
 .font-accent {
-  font-family: var(--font-accent, "Libre Baskerville", serif) !important;
+  font-family: var(--font-body, "Inter", sans-serif) !important;
 }
 
 .font-mondwest {
   font-family: var(--font-heading, "Archivo Black", sans-serif) !important;
+  line-height: 1.15 !important;
 }
 
 @keyframes fadeInUp {

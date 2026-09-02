@@ -8,8 +8,8 @@ export default {
     extend: {
       fontFamily: {
         heading: ['"Archivo Black"', 'sans-serif'],
-        body: ['"Playfair Display"', 'serif'],
-        accent: ['"Libre Baskerville"', 'serif'],
+        body: ['"Inter"', 'sans-serif'],
+        sans: ['"Inter"', 'sans-serif'],
       },
     },
   },

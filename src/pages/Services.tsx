@@ -139,6 +139,32 @@ export const servicesData: ServiceCategory[] = [
       'Cleaning outside of cupboards and drawers with wet soapy sponge or polishing.',
     ],
   },
+  {
+    id: 'yard-care',
+    title: 'Yard Care',
+    description:
+      'Professional outdoor groundskeeping and perimeter curb appeal maintenance to keep your San Antonio property looking pristine.',
+    items: [
+      'Precision lawn mowing, edging, and string-trimming along fences and curbs.',
+      'Seasonal leaf blowing, debris collection, and yard cleanup.',
+      'Clearing fallen branches, twigs, and clutter from front and back yards.',
+      'Blowing and tidying of driveways, walkways, patios, and outdoor decks.',
+      'Flowerbed weeding and border tidying available upon request.',
+    ],
+  },
+  {
+    id: 'carpet-cleaning',
+    title: 'Carpet Cleaning',
+    description:
+      'Commercial-grade deep steam extraction and fiber restoration designed for high-traffic homes and commercial spaces.',
+    items: [
+      'Deep hot water steam extraction and thorough fiber rinsing.',
+      'Targeted pre-treatment for heavy walkways, high-traffic corridors, and stubborn spots.',
+      'Pet stain, odor, and allergen neutralizing enzyme treatments.',
+      'Safe, delicate care for area rugs and synthetic or wool fiber weaves.',
+      'Fast-drying techniques with zero sticky detergent residue left behind.',
+    ],
+  },
 ];
 
 interface ServiceBlockProps {
@@ -271,7 +297,7 @@ export const Services: React.FC<ServicesPageProps> = ({
         <h1
           id="services-hero-heading"
           style={{ animationDelay: '0.2s' }}
-          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-[1.05] text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
+          className={`font-heading text-[38px] sm:text-[64px] md:text-[80px] leading-tight text-[#0D212C] font-semibold tracking-tight max-w-4xl mb-8 will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
