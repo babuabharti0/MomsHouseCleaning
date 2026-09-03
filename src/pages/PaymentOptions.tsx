@@ -104,7 +104,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
       >
         <div
           style={{ animationDelay: '0.2s' }}
-          className={`w-full bg-white rounded-[24px] sm:rounded-[40px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] p-5 sm:p-8 md:p-12 border border-gray-100 will-change-transform ${
+          className={`w-full bg-white rounded-2xl md:rounded-3xl shadow-sm p-6 md:p-8 border border-slate-200/80 will-change-transform ${
             consoleInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
@@ -113,7 +113,7 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             id="checkout-direct-contact-header"
             className="text-center mb-8 pb-8 border-b border-gray-100 flex flex-col items-center"
           >
-            <div className="flex items-center justify-center gap-1.5 text-sm text-[#273C46] mb-1.5 font-normal">
+            <div className="flex items-center justify-center gap-1.5 text-base text-slate-800 mb-1.5 font-normal">
               <RealisticPhoneCallIcon className="w-4 h-4" />
               <span>Call or Text Us:</span>
             </div>
@@ -121,19 +121,19 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
             <a
               href="tel:2103808066"
               id="payment-phone-link"
-              className="font-heading text-3xl sm:text-4xl text-[#051A24] tracking-tight font-semibold hover:opacity-80 transition-opacity"
+              className="font-heading text-3xl sm:text-4xl text-slate-900 tracking-tight font-semibold hover:opacity-80 transition-opacity"
             >
               210.380.8066
             </a>
 
-            <span className="text-[11px] font-mono uppercase tracking-widest text-[#051A24]/60 mt-1">
+            <span className="text-xs font-mono uppercase tracking-widest text-slate-600 mt-1">
               Questions regarding invoice or amount?
             </span>
           </div>
 
           {/* STEP 2: The Payment Gateway Form */}
           <div id="checkout-gateway-form" className="w-full">
-            <h2 className="font-heading text-xl font-semibold text-[#0D212C] mb-6 text-center tracking-tight">
+            <h2 className="font-heading text-xl font-semibold text-slate-900 mb-6 text-center tracking-tight">
               Pay Mom's House Cleaning
             </h2>
 
@@ -270,21 +270,21 @@ export const PaymentOptions: React.FC<PaymentOptionsProps> = ({
           {/* STEP 3: Alternative Payments & Guarantees */}
           <div
             id="checkout-alternative-payments"
-            className="text-sm text-[#273C46] text-center mt-8 space-y-4 pt-6 border-t border-gray-100"
+            className="text-base text-slate-800 text-center mt-8 space-y-4 pt-6 border-t border-slate-100"
           >
-            <div className="flex items-center justify-center gap-2 font-medium text-[#051A24]">
+            <div className="flex items-center justify-center gap-2 font-medium text-slate-900">
               <RealisticSparklesIcon className="w-4 h-4" />
               <span>We also accept Zelle, Venmo, and CashApp.</span>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-xs text-[#273C46]">
+            <div className="flex items-center justify-center gap-2 text-sm text-slate-800">
               <RealisticGiftIcon className="w-4 h-4" />
-              <span>Gift Certificates Available upon Request. (Only valid for one year.)</span>
+              <span>Gift Certificates Available upon Request. (Valid for one year.)</span>
             </div>
 
-            <div className="flex items-center justify-center gap-2 text-xs text-[#051A24] font-medium bg-[#F6FCFF] py-2.5 px-4 rounded-xl border border-[#0D212C]/5">
+            <div className="flex items-center justify-center gap-2 text-sm text-slate-900 font-medium bg-slate-50 py-2.5 px-4 rounded-xl border border-slate-200/60">
               <RealisticShieldCheckIcon className="w-4 h-4" />
-              <span>We will beat any insured and bonded competitor's price.</span>
+              <span>We match or beat any insured competitor's verified rate.</span>
             </div>
           </div>
         </div>

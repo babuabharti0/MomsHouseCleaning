@@ -183,16 +183,16 @@ export const Contact: React.FC<ContactPageProps> = ({
             leftColInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          <div className="bg-white rounded-[24px] sm:rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-5 sm:p-8 md:p-10 border border-slate-100/80">
+          <div className="bg-white rounded-2xl md:rounded-3xl shadow-sm p-6 md:p-8 border border-slate-200/80">
             <div className="mb-6">
               <h2
                 id="contact-form-title"
-                className="font-heading text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight mb-2"
+                className="font-heading text-2xl md:text-3xl text-slate-900 font-semibold tracking-tight mb-2"
               >
                 Send Us a Message
               </h2>
-              <p className="text-sm text-[#273C46] font-normal leading-relaxed">
-                Fill out the details below and we will prepare a personalized estimate for your home or property.
+              <p className="text-base text-slate-800 font-normal leading-relaxed">
+                Fill out the details below for a quick, personalized estimate.
               </p>
             </div>
 
@@ -465,10 +465,10 @@ export const Contact: React.FC<ContactPageProps> = ({
           {/* Card 1 (Direct Contact & Payments - Light UI) */}
           <div
             id="card-direct-contact-light"
-            className="bg-white rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-8 md:p-10 border border-slate-100/80"
+            className="bg-white rounded-2xl md:rounded-3xl shadow-sm p-6 md:p-8 border border-slate-200/80"
           >
             <div className="flex items-center justify-between gap-4 mb-2">
-              <h3 className="text-xl font-semibold text-[#051A24]">
+              <h3 className="text-xl font-semibold text-slate-900">
                 Call or Text Us
               </h3>
               <span className="p-1.5 rounded-full bg-slate-100">
@@ -479,18 +479,18 @@ export const Contact: React.FC<ContactPageProps> = ({
             <a
               href="tel:2103808066"
               id="contact-phone-link"
-              className="font-heading text-3xl md:text-4xl text-[#051A24] tracking-tight block hover:opacity-80 transition-opacity font-semibold"
+              className="font-heading text-3xl md:text-4xl text-slate-900 tracking-tight block hover:opacity-80 transition-opacity font-semibold"
             >
               210.380.8066
             </a>
 
             <div className="border-t border-slate-200/80 my-6" />
 
-            <div className="flex flex-col gap-4 text-sm text-[#273C46]">
+            <div className="flex flex-col gap-4 text-base text-slate-800">
               <div className="flex items-start gap-3">
                 <RealisticCreditCardIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed font-normal">
-                  <strong className="text-[#051A24] font-medium block">
+                  <strong className="text-slate-900 font-medium block">
                     Flexible Payment Methods:
                   </strong>
                   We accept PayPal, Zelle, Venmo, and CashApp.
@@ -500,10 +500,10 @@ export const Contact: React.FC<ContactPageProps> = ({
               <div className="flex items-start gap-3">
                 <RealisticShieldCheckIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <p className="leading-relaxed font-normal">
-                  <strong className="text-[#051A24] font-medium block">
+                  <strong className="text-slate-900 font-medium block">
                     Price Match Promise:
                   </strong>
-                  We will beat any insured and bonded competitor's price.
+                  We match or beat any insured competitor's verified rate.
                 </p>
               </div>
             </div>
@@ -512,7 +512,7 @@ export const Contact: React.FC<ContactPageProps> = ({
           {/* Card 2 (Guarantee & Peace of Mind - Dark UI) */}
           <div
             id="card-guarantee-dark"
-            className="bg-[#051A24] text-[#F6FCFF] rounded-[32px] p-8 md:p-10 mt-6 shadow-xl"
+            className="bg-[#051A24] text-[#F6FCFF] rounded-2xl md:rounded-3xl p-6 md:p-8 mt-6 shadow-sm"
           >
             <div className="flex items-center gap-2 mb-3">
               <RealisticSparklesIcon className="w-5 h-5" />
@@ -521,33 +521,33 @@ export const Contact: React.FC<ContactPageProps> = ({
               </h3>
             </div>
 
-            <p className="text-sm text-[#E0EBF0]/95 leading-relaxed font-normal mb-6">
-              We are not happy unless you are happy! We will fix or redo anything missed within a 24-hour notice. No refunds!
+            <p className="text-base md:text-lg text-slate-200 leading-relaxed font-normal mb-6">
+              We promptly re-clean anything missed within a 24-hour notice.
             </p>
 
             <div className="flex flex-col gap-3 mb-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-3">
                 <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
-                  Insured and Bonded for YOUR PROTECTION.
+                  Insured and bonded for your full protection.
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
-                  Registered with Bexar Country (D.B.A.)
+                  Registered with Bexar County, Texas.
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <RealisticCheckCircleIcon className="w-5 h-5 flex-shrink-0" />
                 <span className="text-sm font-medium text-[#F6FCFF]">
-                  Angie certified & References Available.
+                  Angie Certified with verified references available.
                 </span>
               </div>
             </div>
 
             <p className="text-xs text-[#E0EBF0]/70 leading-relaxed font-mono pt-4 border-t border-white/10">
-              * Discounts offered to active duty Military, Veterans, Senior Citizens, Police, Fire, and Paramedics.
+              * Special discounts for military, first responders, and senior citizens.
             </p>
           </div>
         </div>

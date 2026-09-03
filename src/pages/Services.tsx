@@ -21,148 +21,98 @@ export interface ServiceCategory {
 export const servicesData: ServiceCategory[] = [
   {
     id: 'initial-cleaning',
-    title: 'Initial Cleaning',
-    description:
-      'Keep up and maintain everything under Initial Cleaning. Everything listed will not have to be done at every weekly or bi-weekly cleaning. Maintain as needed.',
+    title: 'Initial Deep Clean',
+    description: 'Top-to-bottom detail cleaning for a spotless home.',
     items: [
-      'Bathrooms: clean and disinfect (tub/shower, sink, countertop, toilet). Clean outside cupboards and drawers if needed. Clean bottom and base of toilet including floor.',
-      'Kitchen: clean and disinfect (sink and countertop). Clean or polish outside of cupboards and drawers if needed. Clean stove top including drip pans; lift top of stove top and clean if possible. Clean outside of all appliances (refrigerator including top, oven, microwave and dishwasher). Clean inside microwave. Clean outside of appliances and items on countertop.',
-      'Clean all mirrors throughout home.',
-      'Clean all vents throughout home.',
-      'Cobwebs removed throughout home.',
-      'Dust all furniture (with polish if needed). Dust picture frames, ceiling fans including lighting fixtures, windowsills and frame of window where lock is. Dust door frames and ledges.',
-      'Vacuum furniture (if requested).',
-      'Vacuum or sweep all floors (including stairs). Mop tile or linoleum floors. Polish wood or laminate floors.',
-      'Clean all baseboards (by hand with damp cloth or damp sponge if requested).',
-      'Clean blinds with a duster (by hand with a sponge or damp towel if requested).',
-      'Clean glass sliding patio doors and glass front door if requested.',
-      'Clean light switches and doorknobs.',
-      'Clean inside closets and pantry including shelves.',
-      'Empty trash cans.',
-      'Dust door panels if needed. Washing with a wet towel or sponge if requested.',
-      'Cleaning of water heater and A/C closet if requested.',
+      'Complete bathroom scrubbing, tile disinfection, and toilet sanitization.',
+      'Kitchen countertops, sink, stovetop, and exterior appliance cleaning.',
+      'Hand-wiping of all baseboards, window blinds, and sills.',
+      'High-dusting of ceiling fans, vents, and light fixtures.',
+      'Full-home floor vacuuming, hard-surface mopping, and wood polishing.',
     ],
   },
   {
     id: 'weekly-cleaning',
-    title: 'Weekly, Bi-weekly and Monthly Cleanings',
-    description: 'Ongoing maintenance of your initial deep clean baseline.',
+    title: 'Recurring Maintenance',
+    description: 'Regular housekeeping to keep your home consistently fresh.',
     items: [
-      'Keep up and maintain everything under “Initial Cleaning”.',
-      'Everything listed will not have to be done at every weekly or bi-weekly cleaning.',
-      'Maintain as needed.',
+      'Weekly, bi-weekly, or monthly customized schedules.',
+      'Sanitizing high-touch surfaces, doorknobs, and light switches.',
+      'Disinfecting all bathroom and kitchen surfaces.',
+      'Dusting furniture and complete floor vacuuming and mopping.',
+      'Trash removal and maintaining your deep clean baseline.',
     ],
   },
   {
     id: 'maid-services',
     title: 'Maid Services',
-    description: 'Our MAID SERVICES include (upon request) but are not limited to:',
+    description: 'Custom daily chores, laundry, dishes, and housekeeping help.',
     items: [
-      'Dishes.',
-      'Laundry (linens).',
-      'Changing sheets.',
-      'Making beds.',
-      'Straightening up (organizing).',
-      'Vacuum furniture.',
+      'Washing dishes, sink clearing, and unloading the dishwasher.',
+      'Washing, drying, and folding household towels and linens.',
+      'Changing bed sheets and making fresh beds.',
+      'Tidying living areas, toys, and room decluttering.',
+      'Light organizing tailored to your family routines.',
     ],
   },
   {
     id: 'move-outs',
-    title: 'Move Outs, Clean Outs, Make Readies',
-    description: 'Intensive deep cleaning designed for property transitions.',
+    title: 'Move Outs & Make Readies',
+    description: 'Complete move-in and move-out turnaround cleaning service.',
     items: [
-      'Clean and disinfect bathrooms: clean outside drawers and cabinets (inside if requested).',
-      'Clean and disinfect kitchen: clean outside drawers and cabinets (inside if requested), clean outside and top of refrigerator (inside if requested), outside dishwasher and oven (inside if requested). Clean behind refrigerator and washer/dryer if requested.',
-      'Sweep, mop, and/or vacuum all floors, including stairs.',
-      'Clean baseboards (by hand with damp cloth or sponge if requested).',
-      'Clean windowsills and top of window frames where the lock is.',
-      'Clean blinds with a duster (by hand with a sponge or damp towel if requested).',
-      'Clean door frames, light switches, and doorknobs.',
-      'Clean all light fixtures (by hand with sponge or damp towel if requested).',
-      'Clean ceiling fans including light fixtures (by hand with sponge or damp towel if requested).',
-      'Clean all mirrors.',
-      'Clean all vents throughout home.',
-      'Cobwebs removed throughout home.',
-      'Clean inside closets and pantry including shelves.',
-      'Clean glass sliding patio doors and glass front door if requested.',
-      'Empty trash cans.',
-      'Dust door panels if needed. Washing with a wet towel or sponge if requested.',
-      'Cleaning of water heater and A/C closet if requested.',
+      'Inside and outside of all kitchen cabinets and drawers.',
+      'Deep sanitizing of all bathrooms, tubs, and vanities.',
+      'Cleaning inside closets, pantries, and storage shelving.',
+      'Hand-wiping baseboards, doors, frames, and blinds.',
+      'Behind appliances and full floor deep cleaning.',
     ],
   },
   {
     id: 'short-term-rentals',
-    title: 'Short Term Rentals / Bed and Breakfast Cleanings',
-    description: 'Turnkey cleaning and restocking for hospitality properties.',
+    title: 'Short Term Rentals & Airbnb',
+    description: 'Turnkey turnover cleaning and restocking for Airbnb hosts.',
     items: [
-      'Bathrooms: clean and disinfect.',
-      'Kitchen: Clean inside and outside of all appliances.',
-      'Clean all mirrors and vents.',
-      'Cobwebs removed.',
-      'Dust and clean all furniture including patio.',
-      'Vacuum furniture (if needed).',
-      'Check under furniture, especially bed for any trash or debris.',
-      'Vacuum or sweep all floors. Mop or polish hard floors.',
-      'Clean all baseboards, blinds, glass sliding doors, and windows (if needed).',
-      'Clean light switches, doorknobs, inside closets, and pantry.',
-      'Check inside all drawers, closets, and shelves to make sure no items or trash are left behind.',
-      'Empty trash cans and dust door panels.',
-      'Restocking of all supplies (toilet paper, paper towels, body soap, etc.).',
-      'Purchase supplies if needed (extra cost).',
-      'Wash and dry towels and linens (two loads are included, each additional load is $15).',
-      'Wash dishes and empty the dish washer.',
-      'Put fresh linens on all beds.',
-      'Sweep front and back porch or garage if needed.',
-      'Check front and back yard for any trash or broken bottles.',
-      'Take trash cans to curb if needed.',
-      'We check and report any damages to property.',
+      'Rapid turnover sanitization between guest stays.',
+      'Launder linens, wash towels, and remake beds.',
+      'Restocking toiletries, paper towels, and essentials.',
+      'Washing dishes and sanitizing kitchen appliances.',
+      'Inspecting and reporting any property damage.',
     ],
   },
   {
     id: 'extra-services',
-    title: 'Extra or Additional Services',
-    description: 'These services can be added to any of our services if requested.',
+    title: 'Extra & Additional Services',
+    description: 'Targeted add-on services customized to your exact needs.',
     items: [
-      'Window cleaning.',
-      'Moving furniture to clean under.',
-      'Hand cleaning of blinds (with sponge or wet towel).',
-      'Vacuuming furniture.',
-      'Cleaning inside of refrigerator, cupboards & drawers.',
-      'Cleaning baseboards and scrubbing floors by hand.',
-      'Cleaning inside of oven.',
-      'Cleaning or dusting knick-knacks.',
-      'Cleaning or sweeping out garage, front porch, or back patio.',
-      'Cleaning of water heater and A/C closet.',
-      'Washing door panels with a wet towel or sponge.',
-      'Picking up items off the floor (clothing, toys, etc.).',
-      'Dusting walls.',
-      'Cleaning outside of cupboards and drawers with wet soapy sponge or polishing.',
+      'Deep interior cleaning for refrigerators and ovens.',
+      'Interior window washing, tracks, and sliding glass doors.',
+      'Detailed hand-sponge washing for window blinds.',
+      'Sweeping garages, front porches, and back patios.',
+      'Water heater closet dusting and under-furniture vacuuming.',
     ],
   },
   {
     id: 'yard-care',
     title: 'Yard Care',
-    description:
-      'Professional outdoor groundskeeping and perimeter curb appeal maintenance to keep your San Antonio property looking pristine.',
+    description: 'Lawn mowing, edging, and outdoor debris yard cleanup.',
     items: [
-      'Precision lawn mowing, edging, and string-trimming along fences and curbs.',
-      'Seasonal leaf blowing, debris collection, and yard cleanup.',
-      'Clearing fallen branches, twigs, and clutter from front and back yards.',
-      'Blowing and tidying of driveways, walkways, patios, and outdoor decks.',
-      'Flowerbed weeding and border tidying available upon request.',
+      'Precision lawn mowing and curb edging.',
+      'Blowing driveways, walkways, decks, and patios.',
+      'Seasonal leaf blowing and debris collection.',
+      'Clearing fallen branches and lawn clutter.',
+      'Weeding flowerbed perimeters upon request.',
     ],
   },
   {
     id: 'carpet-cleaning',
     title: 'Carpet Cleaning',
-    description:
-      'Commercial-grade deep steam extraction and fiber restoration designed for high-traffic homes and commercial spaces.',
+    description: 'Deep steam extraction to restore and revitalize carpets.',
     items: [
-      'Deep hot water steam extraction and thorough fiber rinsing.',
-      'Targeted pre-treatment for heavy walkways, high-traffic corridors, and stubborn spots.',
-      'Pet stain, odor, and allergen neutralizing enzyme treatments.',
-      'Safe, delicate care for area rugs and synthetic or wool fiber weaves.',
-      'Fast-drying techniques with zero sticky detergent residue left behind.',
+      'Commercial hot water steam fiber extraction.',
+      'Pre-treatment for high-traffic walkways and hallways.',
+      'Pet stain and odor neutralizing enzyme treatments.',
+      'Safe cleaning for delicate area rugs and synthetics.',
+      'Fast-drying finish with zero sticky residue.',
     ],
   },
 ];
@@ -170,64 +120,78 @@ export const servicesData: ServiceCategory[] = [
 interface ServiceBlockProps {
   service: ServiceCategory;
   index: number;
+  onOpenEstimate: (serviceTitle?: string) => void;
 }
 
-const ServiceBlock: React.FC<ServiceBlockProps> = ({ service, index }) => {
+const ServiceBlock: React.FC<ServiceBlockProps> = ({ service, index, onOpenEstimate }) => {
   const { ref, isInView } = useInViewAnimation(0.1);
 
   return (
     <div
       ref={ref}
-      id={`service-block-${service.id}`}
-      style={{ animationDelay: `${(index % 3) * 0.15}s` }}
-      className={`flex flex-col md:flex-row gap-8 lg:gap-12 items-start will-change-transform ${
+      id={`service-card-${service.id}`}
+      style={{ animationDelay: `${(index % 2) * 0.1}s` }}
+      className={`bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between will-change-transform ${
         isInView ? 'animate-fade-in-up' : 'opacity-0'
       }`}
     >
-      {/* LEFT / TOP PORTION: Text block offset (md:w-1/3) */}
-      <div
-        id={`service-header-${service.id}`}
-        className="w-full md:w-1/3 flex flex-col pt-2"
-      >
-        <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/60 font-semibold mb-2 flex items-center gap-1.5">
-          <RealisticSparklesIcon className="w-4 h-4" />
-          Service #{index + 1}
-        </span>
+      <div>
+        {/* Card Header Tag */}
+        <div className="flex items-center justify-between gap-3 mb-4">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-slate-600 bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
+            0{index + 1}
+          </span>
+          <span className="text-xs font-mono uppercase tracking-wider text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            San Antonio, TX
+          </span>
+        </div>
+
+        {/* Title */}
         <h2
           id={`service-title-${service.id}`}
-          className="font-heading text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight mb-3"
+          className="font-heading text-2xl md:text-3xl font-semibold text-slate-900 tracking-tight mb-2"
         >
           {service.title}
         </h2>
+
+        {/* Description: 6-10 words, high contrast text-slate-800, text-base md:text-lg, leading-relaxed */}
         <p
           id={`service-desc-${service.id}`}
-          className="text-base text-[#273C46] leading-relaxed font-normal"
+          className="text-base md:text-lg text-slate-800 leading-relaxed font-normal mb-6"
         >
           {service.description}
         </p>
-      </div>
 
-      {/* RIGHT / BOTTOM PORTION: Premium white card (md:w-2/3) wrapping the list */}
-      <div
-        id={`service-card-${service.id}`}
-        className="w-full md:w-2/3 bg-white rounded-[20px] sm:rounded-[32px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-4 sm:p-8 md:p-12 border border-slate-100/80 transition-shadow duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.1)]"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-8 gap-y-2.5 sm:gap-y-4">
+        {/* Essential Bullet Highlights */}
+        <div className="space-y-3 pt-4 border-t border-slate-100 mb-6">
           {service.items.map((item, itemIdx) => (
             <div
               key={itemIdx}
               id={`service-item-${service.id}-${itemIdx}`}
-              className="flex items-start gap-2.5 sm:gap-3"
+              className="flex items-start gap-3"
             >
-              <span className="p-0.5 rounded-full bg-slate-100 flex-shrink-0 mt-0.5">
-                <RealisticCheckIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="p-0.5 rounded-full bg-slate-100 text-slate-700 shrink-0 mt-1">
+                <RealisticCheckIcon className="w-3.5 h-3.5" />
               </span>
-              <p className="text-xs sm:text-sm text-[#0D212C] leading-relaxed font-normal">
+              <p className="text-sm md:text-base text-slate-800 leading-relaxed font-normal">
                 {item}
               </p>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Action Footer */}
+      <div className="pt-5 border-t border-slate-100 flex items-center justify-between">
+        <button
+          id={`btn-estimate-${service.id}`}
+          type="button"
+          onClick={() => onOpenEstimate(service.title)}
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#051A24] text-white hover:bg-slate-800 text-sm font-medium transition-all cursor-pointer shadow-sm active:scale-[0.98]"
+        >
+          <span>Get Free Estimate</span>
+          <RealisticSparklesIcon className="w-4 h-4 text-emerald-300" />
+        </button>
       </div>
     </div>
   );
@@ -327,14 +291,30 @@ export const Services: React.FC<ServicesPageProps> = ({
       {/* Interactive Hybrid Service Search & Filtering Engine */}
       <ServiceSearch onOpenEstimate={onOpenEstimate} />
 
-      {/* Services List Section (2-Column Grid inside Premium Cards) */}
+      {/* Services List Section (Clean Minimalist 2-Column Grid) */}
       <section
         id="services-list-container"
-        className="w-full py-8 px-4 md:py-24 md:px-12 mx-auto flex flex-col gap-8 md:gap-24"
+        className="w-full max-w-7xl py-8 px-4 md:py-20 md:px-12 mx-auto"
       >
-        {servicesData.map((service, index) => (
-          <ServiceBlock key={service.id} service={service} index={index} />
-        ))}
+        <div className="mb-8 md:mb-12 text-center max-w-2xl mx-auto">
+          <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl text-slate-900 font-semibold tracking-tight mb-2">
+            Essential Service Menu
+          </h2>
+          <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
+            Transparent, professional cleaning solutions tailored to your schedule.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full">
+          {servicesData.map((service, index) => (
+            <ServiceBlock
+              key={service.id}
+              service={service}
+              index={index}
+              onOpenEstimate={onOpenEstimate}
+            />
+          ))}
+        </div>
       </section>
 
       {/* Footer */}

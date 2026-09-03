@@ -56,7 +56,7 @@ const AudioCard: React.FC<AudioCardProps> = ({
     <div
       id={id}
       style={{ animationDelay: delay }}
-      className={`bg-white rounded-2xl p-6 shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-slate-200/70 transition-all duration-300 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)] flex flex-col justify-between ${
+      className={`bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200/80 transition-all duration-200 hover:shadow-md flex flex-col justify-between ${
         isInView ? 'animate-fade-in-up' : 'opacity-0'
       }`}
     >
@@ -130,16 +130,16 @@ export const AudioCommercialsSection: React.FC = () => {
 
           <h2
             id="audio-heading"
-            className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-3 md:mb-4"
+            className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-3 md:mb-4"
           >
             Let Us Do Your Dirty Work
           </h2>
 
           <p
             id="audio-description"
-            className="text-xs sm:text-sm md:text-base text-[#051A24] leading-relaxed font-normal"
+            className="text-base md:text-lg text-slate-800 leading-relaxed font-normal"
           >
-            Mom's House Cleaning specializes in all kinds of domestic cleaning. Imagine returning to a spotless, professionally cleaned home that now allows you time to relax or go have fun.
+            Enjoy a spotless home with more time to relax.
           </p>
         </div>
 

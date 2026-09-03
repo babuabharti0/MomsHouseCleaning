@@ -14,8 +14,7 @@ const PROJECTS: ProjectItemData[] = [
   {
     id: 'project-move-outs',
     title: 'Move Outs & Make Readies',
-    description:
-      "We specialize in 'move outs/clean outs' and 'make readies' designed for complete property transitions, turnkey readiness, and immaculate final inspections.",
+    description: 'Turnkey move-out turnovers for tenants, landlords, and realtors.',
     image:
       'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80',
     alt: 'Immaculate empty renovated apartment ready for tenant move-in',
@@ -23,8 +22,7 @@ const PROJECTS: ProjectItemData[] = [
   {
     id: 'project-airbnb',
     title: 'Short Term Rentals / Airbnb',
-    description:
-      'Turnkey cleaning, restocking, and linen washing for bed & breakfasts across San Antonio.',
+    description: 'Turnkey turnover cleaning and restocking for Airbnb hosts.',
     image:
       'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=1400&q=80',
     alt: 'Hotel-grade fresh bedroom linen presentation for Airbnb rental',
@@ -32,8 +30,7 @@ const PROJECTS: ProjectItemData[] = [
   {
     id: 'project-green',
     title: "Mom's Gone Green",
-    description:
-      "Mom's House Cleaning now offers GREEN CLEANING upon request. Now you can get dependable cleaning without the chemical warfare. The products we use will not harm you, your family, or your pets, and they are environmentally friendly.",
+    description: 'Eco-friendly non-toxic cleaning safe for families and pets.',
     image:
       'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=1400&q=80',
     alt: 'Eco-friendly non-toxic cleaning spray with natural wash cloth',
@@ -59,20 +56,20 @@ const ProjectCard: React.FC<{ item: ProjectItemData; index: number }> = ({
       <div className="ml-2 sm:ml-12 md:ml-28 mb-3 md:mb-6 max-w-xl">
         <h3
           id={`project-title-${item.id}`}
-          className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-[#051A24] tracking-tight mb-2"
+          className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 tracking-tight mb-2"
         >
           {item.title}
         </h3>
         <p
           id={`project-desc-${item.id}`}
-          className="text-xs sm:text-sm md:text-base text-[#051A24]/80 leading-relaxed font-normal"
+          className="text-base md:text-lg text-slate-800 leading-relaxed font-normal"
         >
           {item.description}
         </p>
       </div>
 
       {/* Full-width image below */}
-      <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-lg group">
+      <div className="w-full overflow-hidden rounded-2xl md:rounded-3xl shadow-sm border border-slate-200/80 group">
         <img
           id={`project-img-${item.id}`}
           src={item.image}
@@ -100,24 +97,24 @@ export const ProjectsSection: React.FC = () => {
       <div
         ref={summaryRef}
         style={{ animationDelay: '0.1s' }}
-        className={`w-full mb-8 md:mb-16 rounded-[24px] sm:rounded-[36px] md:rounded-[40px] bg-slate-50/90 border border-slate-200/80 p-5 sm:p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.04)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 ${
+        className={`w-full mb-8 md:mb-16 rounded-2xl md:rounded-3xl bg-white border border-slate-200/80 p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 ${
           summaryInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
       >
         <div className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-widest text-[#051A24]/60 font-semibold">
+          <div className="flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-widest text-slate-600 font-semibold">
             <RealisticCalendarIcon className="w-4 h-4" />
             <span>Service Flexibility</span>
           </div>
-          <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-semibold text-[#0D212C] tracking-tight mb-2 md:mb-3">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-4xl font-semibold text-slate-900 tracking-tight mb-2 md:mb-3">
             Custom Scheduled Housekeeping
           </h2>
-          <p className="text-xs sm:text-sm md:text-base text-[#051A24] leading-relaxed font-normal">
-            We specialize in weekly, biweekly, or monthly scheduled cleanings. We also specialize in "move outs/clean outs" and "make readies". Spring cleaning/detail cleaning are available upon request.
+          <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
+            Flexible housekeeping tailored to your personal schedule and preferences.
           </p>
         </div>
 
-        <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-mono font-medium text-[#051A24] shadow-sm">
+        <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-medium text-slate-900 shadow-sm">
           <RealisticSparklesIcon className="w-4 h-4" />
           <span>Flexible Scheduling</span>
         </div>

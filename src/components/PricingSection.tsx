@@ -26,7 +26,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           <div
             id="card-initial-deep-clean"
             style={{ animationDelay: '0.1s' }}
-            className={`bg-[#051A24] rounded-[24px] sm:rounded-[36px] md:rounded-[40px] p-5 sm:p-8 md:pl-10 md:pr-16 md:pt-6 md:pb-10 flex flex-col justify-between text-[#F6FCFF] shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${
+            className={`bg-[#051A24] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between text-[#F6FCFF] shadow-sm transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -42,20 +42,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Title */}
               <h3
                 id="deep-clean-title"
-                className="text-xl sm:text-[22px] font-medium text-[#F6FCFF] tracking-tight mb-2 md:mb-3"
+                className="font-heading text-2xl md:text-3xl font-semibold text-[#F6FCFF] tracking-tight mb-2 md:mb-3"
               >
                 Initial Deep Clean
               </h3>
 
-              {/* Description */}
+              {/* Description: 6-10 words */}
               <p
                 id="deep-clean-description"
-                className="text-xs sm:text-sm md:text-base text-[#E0EBF0]/90 leading-relaxed mb-6 md:mb-8"
+                className="text-base md:text-lg text-slate-200 leading-relaxed font-normal mb-6 md:mb-8"
               >
-                A comprehensive top-to-bottom clean to establish a flawless baseline.
-                <span className="block text-[#E0EBF0]/70 mt-1">
-                  Includes baseboards, appliances, and details.
-                </span>
+                Top-to-bottom detail cleaning for a spotless home.
               </p>
             </div>
 
@@ -100,7 +97,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
           <div
             id="card-recurring-maintenance"
             style={{ animationDelay: '0.2s' }}
-            className={`bg-white rounded-[24px] sm:rounded-[36px] md:rounded-[40px] p-5 sm:p-8 md:pl-10 md:pr-16 md:pt-6 md:pb-10 flex flex-col justify-between text-[#0D212C] shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-slate-100 transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${
+            className={`bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between text-[#0D212C] shadow-sm border border-slate-200/80 transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -116,20 +113,17 @@ export const PricingSection: React.FC<PricingSectionProps> = ({
               {/* Title */}
               <h3
                 id="recurring-title"
-                className="text-xl sm:text-[22px] font-medium text-[#0D212C] tracking-tight mb-2 md:mb-3"
+                className="font-heading text-2xl md:text-3xl font-semibold text-[#0D212C] tracking-tight mb-2 md:mb-3"
               >
                 Recurring Maintenance
               </h3>
 
-              {/* Description */}
+              {/* Description: 6-10 words */}
               <p
                 id="recurring-description"
-                className="text-xs sm:text-sm md:text-base text-[#273C46] leading-relaxed mb-6 md:mb-8"
+                className="text-base md:text-lg text-slate-800 leading-relaxed font-normal mb-6 md:mb-8"
               >
-                Weekly, bi-weekly, or monthly scheduled cleanings.
-                <span className="block text-[#273C46]/70 mt-1">
-                  Keep your home pristine.
-                </span>
+                Regular housekeeping to keep your home consistently fresh.
               </p>
             </div>
 

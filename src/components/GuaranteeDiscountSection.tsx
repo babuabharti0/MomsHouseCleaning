@@ -24,7 +24,7 @@ export const GuaranteeDiscountSection: React.FC<GuaranteeDiscountSectionProps> =
           <div
             id="card-our-guarantee"
             style={{ animationDelay: '0.1s' }}
-            className={`bg-[#051A24] rounded-[24px] sm:rounded-[36px] md:rounded-[40px] p-5 sm:p-8 md:pl-10 md:pr-16 md:pt-6 md:pb-10 flex flex-col justify-between text-[#F6FCFF] shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] transition-transform duration-300 md:hover:-translate-y-1 ${
+            className={`bg-[#051A24] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between text-[#F6FCFF] shadow-sm transition-transform duration-300 md:hover:-translate-y-1 ${
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -46,12 +46,12 @@ export const GuaranteeDiscountSection: React.FC<GuaranteeDiscountSectionProps> =
                 Our Guarantee
               </h3>
 
-              {/* Description */}
+              {/* Description: 6-10 words */}
               <p
                 id="guarantee-card-text"
-                className="text-xs sm:text-sm md:text-base text-[#E0EBF0]/90 leading-relaxed mb-4 md:mb-6 font-normal"
+                className="text-base md:text-lg text-slate-200 leading-relaxed mb-4 md:mb-6 font-normal"
               >
-                We are not happy unless you are happy! We will fix or redo anything that is missed or needs to be redone within a 24-hour notice unless the job was checked and approved prior to the cleaning person leaving the job. No refunds!
+                We promptly re-clean anything missed within a 24-hour notice.
               </p>
             </div>
 
@@ -75,7 +75,7 @@ export const GuaranteeDiscountSection: React.FC<GuaranteeDiscountSectionProps> =
           <div
             id="card-special-discount"
             style={{ animationDelay: '0.2s' }}
-            className={`bg-white rounded-[24px] sm:rounded-[36px] md:rounded-[40px] p-5 sm:p-8 md:pl-10 md:pr-16 md:pt-6 md:pb-10 flex flex-col justify-between text-[#0D212C] shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-slate-100 transition-transform duration-300 md:hover:-translate-y-1 ${
+            className={`bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between text-[#0D212C] shadow-sm border border-slate-200/80 transition-transform duration-300 md:hover:-translate-y-1 ${
               isInView ? 'animate-fade-in-up' : 'opacity-0'
             }`}
           >
@@ -97,17 +97,17 @@ export const GuaranteeDiscountSection: React.FC<GuaranteeDiscountSectionProps> =
                 Special Discount!
               </h3>
 
-              {/* Description */}
+              {/* Description: 6-10 words */}
               <p
                 id="discount-card-text"
-                className="text-xs sm:text-sm md:text-base text-[#273C46] leading-relaxed mb-4 md:mb-6 font-normal"
+                className="text-base md:text-lg text-slate-800 leading-relaxed mb-4 md:mb-6 font-normal"
               >
-                A discount is offered to active duty Military, Veterans, Senior Citizens, Police, Fire Department, and Paramedics upon request.
+                Special discounts for military, first responders, and senior citizens.
               </p>
             </div>
 
             <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#273C46]/70">
+              <span className="text-[11px] sm:text-xs font-mono uppercase tracking-wider text-slate-600">
                 Honoring Heroes & Seniors
               </span>
               <Button

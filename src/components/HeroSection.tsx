@@ -73,22 +73,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <span className="block font-heading font-semibold italic text-white">Cleaning Spaces.</span>
         </div>
 
-        {/* Description Paragraphs */}
+        {/* Description Paragraph */}
         <div
           id="hero-description"
           style={{ animationDelay: '0.4s' }}
-          className={`flex flex-col gap-4 md:gap-6 text-sm md:text-base text-[#F6FCFF] leading-relaxed mt-4 md:mt-6 text-center font-normal max-w-2xl will-change-transform ${
+          className={`text-base sm:text-lg md:text-xl text-slate-100 leading-relaxed mt-4 md:mt-6 text-center font-normal max-w-xl will-change-transform ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
           <p id="hero-desc-1">
-            We provide residential house cleaning, commercial cleaning, and maid services in the greater San Antonio, Texas, area at low prices.
-          </p>
-          <p id="hero-desc-2">
-            <span className="font-semibold text-white">Give Yourself the Gift of Time:</span> Mom's House Cleaning takes over your chores and leaves you with extra time to spend with your family.
-          </p>
-          <p id="hero-desc-3" className="font-semibold text-white">
-            FAMILY OWNED: We have been cleaning the Alamo City since 1999.
+            Top-rated residential and maid cleaning across San Antonio since 1999.
           </p>
         </div>
 

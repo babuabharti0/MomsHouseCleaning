@@ -13,10 +13,10 @@ import logo03 from '../images/logo03.webp';
 import logo04 from '../images/logo04.webp';
 
 const PEACE_OF_MIND_ITEMS = [
-  'We are Insured and Bonded for YOUR PROTECTION.',
-  'We are registered with Bexar Country (D.B.A.)',
-  'We are Angie certified.',
-  'References Available Upon Request.',
+  'Fully licensed, bonded, and insured for your protection.',
+  'Officially registered with Bexar County, Texas.',
+  'Angie Certified with verified customer reviews.',
+  'Professional local references available upon request.',
 ];
 
 const AWARDS = [
@@ -84,12 +84,12 @@ export const PeaceOfMindSection: React.FC = () => {
         <div
           id="peace-checklist-container"
           style={{ animationDelay: '0.3s' }}
-          className={`lg:col-span-6 bg-slate-50/80 rounded-[24px] sm:rounded-[36px] md:rounded-[40px] p-5 sm:p-8 border border-slate-200/70 flex flex-col justify-between ${
+          className={`lg:col-span-6 bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 border border-slate-200/80 shadow-sm flex flex-col justify-between ${
             isInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
           <div>
-            <h3 className="font-heading text-xl sm:text-2xl font-semibold text-[#051A24] mb-4 md:mb-6">
+            <h3 className="font-heading text-xl sm:text-2xl font-semibold text-slate-900 mb-4 md:mb-6">
               Full Protection Standards
             </h3>
             <ul className="space-y-3 sm:space-y-4">
@@ -97,7 +97,7 @@ export const PeaceOfMindSection: React.FC = () => {
                 <li
                   key={index}
                   id={`peace-item-${index}`}
-                  className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm md:text-base text-[#051A24] leading-snug"
+                  className="flex items-start gap-3 text-sm sm:text-base text-slate-800 leading-relaxed"
                 >
                   <RealisticCheckCircle2Icon className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 mt-0.5" />
                   <span className="font-medium">{item}</span>
@@ -106,9 +106,9 @@ export const PeaceOfMindSection: React.FC = () => {
             </ul>
           </div>
 
-          <div className="mt-6 md:mt-8 pt-4 border-t border-slate-200/80 flex items-center justify-between text-[11px] sm:text-xs font-mono text-[#273C46]">
+          <div className="mt-6 md:mt-8 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
             <span>Continuous Compliance</span>
-            <span className="text-[#051A24] font-semibold">100% Bonded & Insured</span>
+            <span className="text-slate-900 font-semibold">100% Bonded & Insured</span>
           </div>
         </div>
 

@@ -22,7 +22,7 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 1,
     name: 'Initial Deep Top-to-Bottom Clean',
     category: 'Packages',
-    description: 'Comprehensive whole-home reset. Complete scrubbing, sanitizing, high-dusting, and surface polishing.',
+    description: 'Top-to-bottom detail cleaning for a spotless home.',
     features: ['Bathrooms & Kitchen Deep Scrub', 'All Baseboards & Vents', 'Ceiling Fans & Blinds Hand Polish'],
     tag: 'Baseline Favorite',
     popular: true,
@@ -31,7 +31,7 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 2,
     name: 'Move-In / Move-Out Turnkey Clean',
     category: 'Packages',
-    description: 'Specialized property transition service for landlords, realtors, and tenants needing deposit returns.',
+    description: 'Turnkey transition cleaning for landlords, realtors, and moving tenants.',
     features: ['Inside Cabinets & Drawers', 'Behind Appliances (on request)', 'Closets, Pantry & Light Fixtures'],
     tag: 'Realtor Standard',
     popular: true,
@@ -40,7 +40,7 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 3,
     name: 'Weekly & Bi-Weekly Maintenance',
     category: 'Packages',
-    description: 'Recurring upkeep to maintain your pristine deep-clean standard on an effortless schedule.',
+    description: 'Effortless recurring housekeeping for a consistently fresh home.',
     features: ['High-Touch Disinfection', 'Floor Mopping & Vacuuming', 'Linens & Surface Maintenance'],
     tag: 'Recurring Plan',
   },
@@ -48,7 +48,7 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 4,
     name: 'Short-Term Rental & Airbnb Turnover',
     category: 'Rentals',
-    description: 'Turnkey sanitization, supply restocking, linen turnover, and damage inspection for 5-star host reviews.',
+    description: 'Turnkey turnover cleaning and restocking for 5-star Airbnb hosts.',
     features: ['Linen Washing & Fresh Bedding', 'Restock Toiletries & Paper Goods', 'Damage & Condition Reporting'],
     tag: 'Host Turnaround',
     popular: true,
@@ -57,21 +57,21 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 5,
     name: 'Refrigerator Interior Deep Scrub',
     category: 'Add-ons',
-    description: 'Complete removal of shelves, disinfecting spillages, wiping seals, and deodorizing refrigerator and freezer.',
+    description: 'Deep scrubbing and deodorizing for clean, fresh refrigerators.',
     features: ['Shelf & Bin Removal', 'Food-Safe Sanitizer', 'Odor Neutralization'],
   },
   {
     id: 6,
     name: 'Oven Interior Scrub & Degrease',
     category: 'Add-ons',
-    description: 'Heavy-duty removal of baked-on grease, grime, rack soaking, and glass door clarity treatment.',
+    description: 'Heavy-duty degreasing and glass polishing for spotless ovens.',
     features: ['Rack Soak & Scrub', 'Baked-On Residue Melt', 'Streak-Free Glass Polish'],
   },
   {
     id: 7,
     name: 'Window Washing (Interior & Sliding Glass)',
     category: 'Detailing',
-    description: 'Crystal-clear, streak-free window cleaning including sills, lock tracks, and sliding patio doors.',
+    description: 'Streak-free interior window cleaning including tracks and sills.',
     features: ['Interior Window Panes', 'Tracks & Sill Detailing', 'Patio Glass Sliders'],
     popular: true,
   },
@@ -79,70 +79,70 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 8,
     name: 'Hand Washing of Window Blinds',
     category: 'Detailing',
-    description: 'Individual slat hand-sponge treatment with specialized microfiber detailing towels.',
+    description: 'Gentle hand-sponge washing for dust-free window blinds.',
     features: ['Slat-by-Slat Sponge Wash', 'Dust & Pet Dander Removal', 'Damp Towel Finish'],
   },
   {
     id: 9,
     name: 'Hand Scrubbing of Baseboards',
     category: 'Detailing',
-    description: 'Detailed on-hands-and-knees wipe down of all baseboard perimeters with warm microfiber suds.',
+    description: 'Detailed hand wipe-down to remove all baseboard scuffs.',
     features: ['Scuff Mark Removal', 'Corner Crevice Cleaning', 'Trim Ledge Dusting'],
   },
   {
     id: 10,
     name: 'Inside Cupboards, Cabinets & Drawers',
     category: 'Add-ons',
-    description: 'Vacuuming crumbs, damp-wiping all interior shelving, drawer tracks, and surface polishing.',
+    description: 'Deep vacuuming and wiping inside all cabinets and drawers.',
     features: ['Pantry & Kitchen Shelves', 'Bathroom Vanity Drawers', 'Closet Storage Units'],
   },
   {
     id: 11,
     name: 'Maid Service: Dishes & Dishwasher Cycle',
     category: 'Maid',
-    description: 'Washing sink dishes, clearing cookware, loading, and emptying the dishwasher.',
+    description: 'Sink dishwashing, counter wiping, and complete dishwasher cycling.',
     features: ['Sink Clearing', 'Dishwasher Cycle & Unload', 'Counter Sanitizing'],
   },
   {
     id: 12,
     name: 'Maid Service: Laundry, Linens & Bed Making',
     category: 'Maid',
-    description: 'Washing, drying, folding household towels/linens, and dressing beds with fresh sheets.',
+    description: 'Fresh bed making with clean washed and folded linens.',
     features: ['Bed Linens Changed', 'Towels Washed & Folded', 'Hospital Corners Tucked'],
   },
   {
     id: 13,
     name: 'Maid Service: Tidying & Room Organizing',
     category: 'Maid',
-    description: 'Straightening clutter, organizing toys/clothing, and returning order to active family living spaces.',
+    description: 'Room tidying, clutter organizing, and living space straighten-up.',
     features: ['Floor Item Pick-Up', 'Living Room Straighten-Up', 'Desk & Table Declutter'],
   },
   {
     id: 14,
     name: 'Garage & Porch Sweep-Out',
     category: 'Detailing',
-    description: 'Blowing, sweeping, and cobweb removal across front entryways, back patios, and garage floors.',
+    description: 'Sweeping and cobweb removal for porches, patios, and garages.',
     features: ['Front Porch & Entry Sweep', 'Back Patio Cleaning', 'Cobwebs Cleared from Eaves'],
   },
   {
     id: 15,
     name: 'Water Heater & AC Closet Dusting',
     category: 'Detailing',
-    description: 'Clearing lint, cobwebs, and heavy dust accumulators from utility closets and mechanical rooms.',
+    description: 'Dust and cobweb clearance for water heater closets.',
     features: ['Louvered Door Panels', 'Utility Floor Vacuum', 'Exterior Tank Wipe'],
   },
   {
     id: 16,
     name: 'Furniture Moving & Under-Couch Cleaning',
     category: 'Add-ons',
-    description: 'Carefully sliding sofas, credenzas, and bed frames to vacuum hidden dust bunnies and lost items.',
+    description: 'Furniture sliding to clean and vacuum hidden floor spaces.',
     features: ['Under-Couch Vacuum', 'Heavy Furniture Clearance', 'Hard Surface Mopping'],
   },
   {
     id: 17,
     name: 'Yard Care & Perimeter Detailing',
     category: 'Add-ons',
-    description: 'Outdoor lawn mowing, edging, leaf blowing, and exterior property clutter cleanup.',
+    description: 'Lawn mowing, edging, and outdoor debris yard cleanup.',
     features: ['Lawn Mowing & Edging', 'Debris & Leaf Removal', 'Driveway & Patio Blowout'],
     tag: 'Outdoor Care',
     popular: true,
@@ -151,7 +151,7 @@ export const ALL_SERVICES: ServiceItem[] = [
     id: 18,
     name: 'Deep Steam Carpet & Rug Cleaning',
     category: 'Packages',
-    description: 'Hot water fiber extraction, high-traffic walkway pre-treatment, and pet odor neutralizing.',
+    description: 'Deep steam fiber extraction to revitalize tired carpets.',
     features: ['Deep Steam Extraction', 'Pet Stain & Odor Treatment', 'Fast-Drying & Residue-Free'],
     tag: 'Fiber Refresh',
     popular: true,
@@ -311,17 +311,17 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
             <div
               key={service.id}
               id={`service-search-card-${service.id}`}
-              className="bg-white rounded-2xl md:rounded-3xl p-5 sm:p-7 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-slate-100/90 hover:shadow-[0_10px_30px_rgba(5,26,36,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200/80 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between group"
             >
               <div>
                 {/* Header: Category Badge & Tag */}
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-[#051A24] border border-slate-200/80">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
                     {service.category}
                   </span>
 
                   {service.tag && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                       <RealisticSparklesIcon className="w-3 h-3" />
                       {service.tag}
                     </span>
@@ -329,24 +329,24 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading text-xl sm:text-2xl text-[#051A24] font-semibold tracking-tight mb-2.5 group-hover:text-[#051A24]">
+                <h3 className="font-heading text-xl sm:text-2xl text-slate-900 font-semibold tracking-tight mb-2.5">
                   {service.name}
                 </h3>
 
-                {/* Description */}
-                <p className="text-xs sm:text-sm text-[#273C46] leading-relaxed font-normal mb-4">
+                {/* Description: 6-10 words, high contrast text-slate-800, text-base md:text-lg, leading-relaxed */}
+                <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal mb-4">
                   {service.description}
                 </p>
 
                 {/* Feature Bullet Points */}
                 {service.features && service.features.length > 0 && (
-                  <div className="flex flex-col gap-1.5 mb-5 pt-3 border-t border-slate-100">
+                  <div className="flex flex-col gap-2 mb-6 pt-3 border-t border-slate-100">
                     {service.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-[#051A24]">
-                        <span className="flex-shrink-0">
+                      <div key={idx} className="flex items-center gap-2.5 text-sm text-slate-800">
+                        <span className="flex-shrink-0 text-slate-700">
                           <RealisticCheckIcon className="w-3.5 h-3.5" />
                         </span>
-                        <span className="leading-tight">{feat}</span>
+                        <span className="leading-relaxed font-normal">{feat}</span>
                       </div>
                     ))}
                   </div>
@@ -358,7 +358,7 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({ onOpenEstimate }) 
                 <button
                   type="button"
                   onClick={() => onOpenEstimate?.(service.name)}
-                  className="w-full py-2.5 px-4 rounded-full bg-slate-100 text-[#051A24] hover:bg-[#051A24] hover:text-white transition-all font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98]"
+                  className="w-full py-2.5 px-4 rounded-full bg-slate-100 text-slate-900 hover:bg-[#051A24] hover:text-white transition-all font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer shadow-sm active:scale-[0.98]"
                 >
                   <RealisticCheckCircle2Icon className="w-4 h-4" />
                   <span>Request Estimate for This</span>

@@ -277,24 +277,20 @@ export const About: React.FC<AboutPageProps> = ({
             philosophyInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          <span className="font-mono text-xs uppercase tracking-widest text-[#051A24]/70 font-semibold">
+          <span className="font-mono text-xs uppercase tracking-widest text-slate-600 font-semibold">
             Our Cleaning Philosophy
           </span>
 
-          <h2 className="font-heading text-3xl md:text-4xl text-[#051A24] font-semibold tracking-tight">
+          <h2 className="font-heading text-3xl md:text-4xl text-slate-900 font-semibold tracking-tight">
             Rewarding You With Extra Time for Family
           </h2>
 
-          <p id="philosophy-p1" className="text-base text-[#273C46] leading-relaxed font-normal">
-            We provide residential and commercial cleaning services in the San Antonio, Texas, area and specialize in weekly, biweekly, or monthly scheduled cleanings. We also specialize in move outs/ clean outs, and make readies, Spring cleaning, and detail cleaning.
+          <p id="philosophy-p1" className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
+            Customized residential cleaning designed to give you valuable time back.
           </p>
 
-          <p id="philosophy-p2" className="text-base text-[#273C46] leading-relaxed font-normal">
-            We can customize a cleaning plan to fit your lifestyle. Mom's House Cleaning provides the experience it takes to keep up a clean home. Our cleaning people provide their own cleaning supplies. No contracts required. We stay until the job is done.
-          </p>
-
-          <p id="philosophy-p3" className="text-base text-[#051A24] font-medium leading-relaxed">
-            Let us help you take care of some of your household chores, and reward yourself with a clean home so you can have extra time to spend with your family or friends.
+          <p id="philosophy-p2" className="text-base md:text-lg text-slate-800 leading-relaxed font-normal">
+            No contracts required. We bring supplies and stay until done.
           </p>
         </div>
 
@@ -303,14 +299,14 @@ export const About: React.FC<AboutPageProps> = ({
           ref={trustCardsRef}
           id="about-trust-reassurance-cards"
           style={{ animationDelay: '0.3s' }}
-          className={`grid grid-cols-1 md:grid-cols-2 gap-8 w-full mt-16 will-change-transform ${
+          className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full mt-12 will-change-transform ${
             trustCardsInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
           {/* Card 1 (Dark #051A24 bg, Text #F6FCFF) */}
           <div
             id="about-card-guarantee-dark"
-            className="bg-[#051A24] text-[#F6FCFF] rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] transition-transform duration-300 hover:-translate-y-1 will-change-transform"
+            className="bg-[#051A24] text-[#F6FCFF] rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-sm transition-transform duration-300 hover:-translate-y-1 will-change-transform"
           >
             <div>
               <div className="flex items-center gap-2 mb-3">
@@ -320,8 +316,8 @@ export const About: React.FC<AboutPageProps> = ({
                 </h3>
               </div>
 
-              <p className="text-sm md:text-base text-[#E0EBF0]/95 leading-relaxed font-normal mb-6">
-                Your satisfaction with the quality of our work is guaranteed. We are not happy unless you are happy! We will fix or redo anything that is missed or needs to be redone within a 24 hour notice, unless the job was checked and approved prior to the cleaning person leaving the job. No cash refunds.
+              <p className="text-base md:text-lg text-slate-200 leading-relaxed font-normal mb-6">
+                We promptly re-clean anything missed within a 24-hour notice.
               </p>
             </div>
 
@@ -343,32 +339,32 @@ export const About: React.FC<AboutPageProps> = ({
           {/* Card 2 (Light White bg, Text #051A24) */}
           <div
             id="about-card-safety-light"
-            className="bg-white text-[#051A24] rounded-[32px] p-8 md:p-10 flex flex-col justify-between shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-slate-100 transition-transform duration-300 hover:-translate-y-1 will-change-transform"
+            className="bg-white text-slate-900 rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-sm border border-slate-200/80 transition-transform duration-300 hover:-translate-y-1 will-change-transform"
           >
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <RealisticShieldCheckIcon className="w-5 h-5" />
-                <h3 className="font-heading text-2xl md:text-3xl text-[#051A24] font-semibold tracking-tight">
+                <h3 className="font-heading text-2xl md:text-3xl text-slate-900 font-semibold tracking-tight">
                   Safety & Protection
                 </h3>
               </div>
 
-              <p className="text-sm md:text-base text-[#273C46] leading-relaxed font-normal mb-6">
-                We are bonded and insured for your protection, and we do a background check on everyone who works for us.
+              <p className="text-base md:text-lg text-slate-800 leading-relaxed font-normal mb-6">
+                Fully bonded, insured, and verified with complete background checks.
               </p>
 
-              <div className="p-4 bg-[#F6FCFF] rounded-2xl border border-slate-200/60 mb-6">
-                <p className="text-xs font-mono text-[#051A24] uppercase tracking-wider font-semibold mb-1">
+              <div className="p-4 bg-slate-50 rounded-xl border border-slate-200/60 mb-6">
+                <p className="text-xs font-mono text-slate-900 uppercase tracking-wider font-semibold mb-1">
                   Community Discount Program:
                 </p>
-                <p className="text-xs text-[#273C46] leading-relaxed font-normal">
-                  We also offer Special Discounts to active duty Military, Veterans, Senior Citizens, Police, Fire Department, and Paramedics upon request.
+                <p className="text-sm text-slate-800 leading-relaxed font-normal">
+                  Special discounts for military, first responders, and senior citizens.
                 </p>
               </div>
             </div>
 
             <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
-              <span className="font-mono text-xs text-[#051A24]/60 uppercase tracking-widest">
+              <span className="font-mono text-xs text-slate-600 uppercase tracking-widest">
                 Insured & Background Checked
               </span>
               <Button

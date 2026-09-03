@@ -118,11 +118,11 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
         <p
           id="testimonials-hero-subtitle"
           style={{ animationDelay: '0.3s' }}
-          className={`font-body text-sm md:text-lg text-[#273C46] max-w-lg mx-auto mt-4 md:mt-6 leading-relaxed will-change-transform ${
+          className={`font-body text-base md:text-lg text-slate-800 max-w-lg mx-auto mt-4 md:mt-6 leading-relaxed will-change-transform ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
         >
-          Here is what some of our clients have to say about us.
+          Real feedback from our satisfied clients across San Antonio.
         </p>
 
         <div
@@ -172,14 +172,14 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
                 key={`${item.name}-${index}`}
                 id={`testimonial-card-${index}`}
                 style={{ animationDelay: `${(index % 6) * 0.08}s` }}
-                className={`break-inside-avoid rounded-[20px] sm:rounded-[32px] p-5 sm:p-8 mb-4 md:mb-6 flex flex-col justify-between transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${currentTheme} ${
+                className={`break-inside-avoid rounded-2xl md:rounded-3xl p-6 md:p-8 mb-4 md:mb-6 flex flex-col justify-between transition-transform duration-300 md:hover:-translate-y-1 will-change-transform ${currentTheme} ${
                   isDark
                     ? index % 4 === 1
-                      ? 'shadow-[inset_0_1px_2px_rgba(255,255,255,0.15),0_10px_30px_-10px_rgba(5,26,36,0.5)] border border-[#051A24]'
-                      : 'shadow-[inset_0_1px_2px_rgba(255,255,255,0.1),0_10px_30px_-10px_rgba(26,44,53,0.5)] border border-[#1A2C35]'
+                      ? 'shadow-sm border border-[#051A24]'
+                      : 'shadow-sm border border-[#1A2C35]'
                     : isSand
-                    ? 'shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-[#E7E2DA]'
-                    : 'shadow-[0_4px_16px_rgba(0,0,0,0.08)] border border-slate-100'
+                    ? 'shadow-sm border border-[#E7E2DA]'
+                    : 'shadow-sm border border-slate-200/80'
                 }`}
               >
                 <div>
@@ -200,8 +200,8 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
 
                   {/* Review Quote */}
                   <p
-                    className={`font-body text-sm md:text-base leading-relaxed my-4 opacity-90 ${
-                      isDark ? 'text-[#E0EBF0]' : 'text-[#273C46]'
+                    className={`font-body text-base leading-relaxed my-4 ${
+                      isDark ? 'text-slate-200' : 'text-slate-800'
                     }`}
                   >
                     "{item.text}"
@@ -216,14 +216,14 @@ export const Testimonials: React.FC<TestimonialsPageProps> = ({
                 >
                   <span
                     className={`font-semibold text-base tracking-tight ${
-                      isDark ? 'text-[#F6FCFF]' : 'text-[#0D212C]'
+                      isDark ? 'text-white' : 'text-slate-900'
                     }`}
                   >
                     {item.name}
                   </span>
                   <span
                     className={`text-xs font-mono uppercase tracking-wider ${
-                      isDark ? 'text-[#E0EBF0]/60' : 'text-[#051A24]/50'
+                      isDark ? 'text-slate-300' : 'text-slate-600'
                     }`}
                   >
                     Verified Client
