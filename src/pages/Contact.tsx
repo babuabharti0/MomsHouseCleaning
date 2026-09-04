@@ -319,7 +319,7 @@ export const Contact: React.FC<ContactPageProps> = ({
                     <option value="Short Term Rentals / Airbnb">
                       Short Term Rentals / Airbnb
                     </option>
-                    <option value="Yard Care">Yard Care</option>
+                    <option value="Lawn Care">Lawn Care</option>
                     <option value="Carpet Cleaning">Carpet Cleaning</option>
                     <option value="Extra & Additional Custom Services">
                       Extra & Additional Custom Services

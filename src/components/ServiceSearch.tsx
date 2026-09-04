@@ -19,6 +19,24 @@ export interface ServiceItem {
 
 export const ALL_SERVICES: ServiceItem[] = [
   {
+    id: 17,
+    name: 'Lawn Care',
+    category: 'Add-ons',
+    description: 'Lawn mowing, edging, and outdoor debris yard cleanup.',
+    features: ['Lawn Mowing & Edging', 'Debris & Leaf Removal', 'Driveway & Patio Blowout'],
+    tag: 'Outdoor Care',
+    popular: true,
+  },
+  {
+    id: 18,
+    name: 'Carpet Cleaning',
+    category: 'Packages',
+    description: 'Deep steam fiber extraction to revitalize tired carpets.',
+    features: ['Deep Steam Extraction', 'Pet Stain & Odor Treatment', 'Fast-Drying & Residue-Free'],
+    tag: 'Fiber Refresh',
+    popular: true,
+  },
+  {
     id: 1,
     name: 'Initial Deep Top-to-Bottom Clean',
     category: 'Packages',
@@ -137,24 +155,6 @@ export const ALL_SERVICES: ServiceItem[] = [
     category: 'Add-ons',
     description: 'Furniture sliding to clean and vacuum hidden floor spaces.',
     features: ['Under-Couch Vacuum', 'Heavy Furniture Clearance', 'Hard Surface Mopping'],
-  },
-  {
-    id: 17,
-    name: 'Yard Care & Perimeter Detailing',
-    category: 'Add-ons',
-    description: 'Lawn mowing, edging, and outdoor debris yard cleanup.',
-    features: ['Lawn Mowing & Edging', 'Debris & Leaf Removal', 'Driveway & Patio Blowout'],
-    tag: 'Outdoor Care',
-    popular: true,
-  },
-  {
-    id: 18,
-    name: 'Deep Steam Carpet & Rug Cleaning',
-    category: 'Packages',
-    description: 'Deep steam fiber extraction to revitalize tired carpets.',
-    features: ['Deep Steam Extraction', 'Pet Stain & Odor Treatment', 'Fast-Drying & Residue-Free'],
-    tag: 'Fiber Refresh',
-    popular: true,
   },
 ];
 

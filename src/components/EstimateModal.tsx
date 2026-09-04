@@ -167,7 +167,7 @@ export const EstimateModal: React.FC<EstimateModalProps> = ({
                   <option value="Move Outs & Make Readies">Move Outs & Make Readies</option>
                   <option value="Short Term Rentals / Airbnb">Short Term Rentals / Airbnb Turnkey</option>
                   <option value="Mom's Gone Green">Mom's Gone Green (Eco-Friendly)</option>
-                  <option value="Yard Care">Yard Care (Mowing, Edging, Cleanup)</option>
+                  <option value="Lawn Care">Lawn Care (Mowing, Edging, Cleanup)</option>
                   <option value="Carpet Cleaning">Carpet Cleaning (Deep Steam Extraction)</option>
                 </select>
               </div>
